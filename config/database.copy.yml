@@ -12,7 +12,7 @@ test:
   database: sci_test
   pool: 5
   username: dgerbs
-  password:
+  password: mypassword
 
 production:
   adapter: postgresql
