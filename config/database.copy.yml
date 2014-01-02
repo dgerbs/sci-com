@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: sci_development
+  pool: 5
+  username: dgerbs
+  password: mypassword
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: sci_test
+  pool: 5
+  username: dgerbs
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: sci_production
+  pool: 5
+  username: dgerbs
+  password: mypassword
