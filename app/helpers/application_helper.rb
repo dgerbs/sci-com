@@ -4,6 +4,8 @@ module ApplicationHelper
     base_title = "Sciero"
     if page_title.empty?
       base_title
+    elsif page_title == "Home"
+      "#{base_title} | Welcome"
     else
       "#{base_title} | #{page_title}"
     end
