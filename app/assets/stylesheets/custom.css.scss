@@ -1,7 +1,20 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$body-bg: #ecf0f1;
+$font-family-sans-serif: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height: 45px;
+$navbar-default-bg: white;
+$navbar-default-brand-color: #186f99;
+$brand-primary: #4ea3cc;
+
 @import 'bootstrap';
 
 body {
   background-image: url('dna-lg.png');
+}
+
+.show {
+  margin-top: 65px;
 }
 
 .navbar-header {
@@ -13,5 +26,5 @@ body {
 }
 
 li a:hover {
-  border-bottom: 5px solid orange;
+  border-bottom: 5px solid #317f6e;
 }
