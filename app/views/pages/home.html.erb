@@ -1,3 +1,23 @@
 <% provide(:title, "Home") %>
 
-<h1>Welcome to Sciero</h1>
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="center">
+          Sciero.
+          <p>
+            <small>Scientific Research. Redefined.</small>
+          </p>
+        </h1>
+      </div>
+      <div class="panel-body">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-success btn-block" %>
+         </div>
+      </div>
+      <div class="panel-footer">
+      </div>
+    </div>
+  </div>
+</div>
