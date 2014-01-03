@@ -15,8 +15,6 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
         <% unless user_signed_in? %>
-          <li><%= link_to "About",   about_path %></li>
-          <li><%= link_to "Contact", contact_path %></li>
           <li><%= link_to "Sign in", new_user_session_path %></li>
         <% else %>
           <form class="navbar-form navbar-left" role="search">
