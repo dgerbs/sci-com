@@ -3,3 +3,15 @@
 body {
   background-image: url('dna-lg.png');
 }
+
+.navbar-header {
+  margin-bottom: 8px;
+}
+
+.navbar {
+  box-shadow: 0px 0px 5px;
+}
+
+li a:hover {
+  border-bottom: 5px solid orange;
+}
