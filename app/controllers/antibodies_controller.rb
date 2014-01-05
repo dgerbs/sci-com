@@ -1,0 +1,2 @@
+class AntibodiesController < ApplicationController
+end

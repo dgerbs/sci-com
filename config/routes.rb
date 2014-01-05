@@ -1,5 +1,7 @@
 Sci::Application.routes.draw do
   
+  resources :antibodies
+
   devise_for :users
 
   root 'pages#home'

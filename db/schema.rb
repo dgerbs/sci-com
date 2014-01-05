@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102201734) do
+ActiveRecord::Schema.define(version: 20140105152917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "antibodies", force: true do |t|
+    t.string   "target",     null: false
+    t.string   "antibody",   null: false
+    t.string   "vendor",     null: false
+    t.string   "product",    null: false
+    t.string   "isotype",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
