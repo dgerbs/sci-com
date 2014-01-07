@@ -9,13 +9,6 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
-     <% if user_signed_in? %>
-      <style>
-        body {
-          background-image: url('creampaper.png');
-        }
-      </style> 
-    <% end %>
     <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |name, msg| %>
