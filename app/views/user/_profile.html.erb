@@ -1,1 +1,28 @@
 <% provide(:title, "Home") %>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-3 col-md-2">Profile panel.</div>
+  <div class="col-xs-12 col-sm-6 col-md-8">Content console.</div>
+  <div class="col-xs-12 col-sm-3 col-md-2">
+    <div id="sidebar">
+      <li>
+        <%= link_to '#', class: "btn btn-link" do %>
+          <span class="glyphicon glyphicon-plus"></span>
+          Antibody
+        <% end %>
+      </li>
+      <li>
+        <%= link_to '#', class: "btn btn-link" do %>
+          <span class="glyphicon glyphicon-plus"></span>
+          Protocol
+        <% end %>
+      </li>
+       <li>
+        <%= link_to '#', class: "btn btn-link" do %>
+          <span class="glyphicon glyphicon-plus"></span>
+          Document
+        <% end %>
+      </li>
+    </div>
+  </div>
+</div>
