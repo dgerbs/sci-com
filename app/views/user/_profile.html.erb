@@ -1,7 +1,11 @@
 <% provide(:title, "Home") %>
 
 <div class="row">
-  <div class="col-xs-12 col-sm-3 col-md-2">Profile panel.</div>
+  <div class="col-xs-12 col-sm-3 col-md-2">
+    <div class="profile_pic">
+      <%= image_tag current_user.image_url(:small_thumb) %>
+    </div>
+  </div>
   <div class="col-xs-12 col-sm-6 col-md-8">Content console.</div>
   <div class="col-xs-12 col-sm-3 col-md-2">
     <div id="sidebar">
