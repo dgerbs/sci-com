@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-offset-4 col-md-4">
+    <div class="panel">
+      <div class="panel-body">
+        <%= form_for @antibody, html: { multipart: true } do |f| %>
+          <% if @antibody.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@antibody.errors.count, "error") %> prohibited this antibody from being saved:
+              </h2>
+              <ul>
+              <% @antibody.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="form-group">
+            <%= f.label :target %>
+            <%= f.text_field :target, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :antibody %>
+            <%= f.text_field :antibody, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :vendor %>
+            <%= f.text_field :vendor, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :product %>
+            <%= f.text_field :product, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :isotype %>
+            <%= f.text_field :isotype, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit class: "btn btn-primary" %>
+          </div>
+        <% end %> 
+      </div>
+      <div class="panel-footer">
+        <p>
+          <%= link_to 'View Protocols', '#' %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

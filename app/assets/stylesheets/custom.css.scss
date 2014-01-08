@@ -10,11 +10,15 @@ $brand-primary: #4ea3cc;
 @import 'bootstrap';
 
 body {
-  background-image: url('dna-lg.png');
+  background-image: url('creampaper.png');
+}
+
+.panel {
+  box-shadow: 3px 3px 10px;
 }
 
 .show {
-  margin-top: 65px;
+  margin-top: 25px;
 }
 
 .navbar-header {
@@ -22,26 +26,47 @@ body {
 }
 
 .navbar {
-  box-shadow: 0px 0px 5px;
-}
-
-.navbar li a:hover {
-  border-bottom: 5px solid #317f6e;
+  box-shadow: 0px 0px 8px;
+  
+  li a:hover {
+    border-bottom: 5px solid #317f6e;  
+  }
 }
 
 .center {
   text-align: center;
 }
+
+.profile_pic {
+  box-shadow: 3px 3px 10px;
+}
+
+#sidebar {
+  width: 180px;
+  background-color: white;
+  min-height: 50px;
+  margin: 0 0 15px 0; /*controls the cutoff of the top and bottom limitations*/
+  padding: 15px 5px;
+  box-shadow: 3px 3px 10px; 
+  float: right; /* float right for a right aligned sidebar */
+  li {
+    list-style: none;
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid white;
   color: #555;
 
   a {
     color: #555;
     &:hover {
-    color: #eaeaea;
+    color: white;
     }
   }
   small {

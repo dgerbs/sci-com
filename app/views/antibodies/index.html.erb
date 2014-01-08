@@ -1,0 +1,24 @@
+<div class="table-responsive">
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Target</th> 
+        <th>Antibody</th>
+        <th>Vendor</th>
+        <th>Product</th>
+        <th>Isotype</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @antibodies.each do |ab| %>
+        <tr>
+          <td><%= ab.target %></td>
+          <td><%= ab.antibody %></td>
+          <td><%= ab.vendor %></td>
+          <td><%= ab.product %></td>
+          <td><%= ab.isotype %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
