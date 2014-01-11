@@ -3,6 +3,11 @@ class AntibodiesController < ApplicationController
 
   def index
     @antibodies = Antibody.all
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
@@ -11,6 +16,11 @@ class AntibodiesController < ApplicationController
 
   def new
     @antibody = Antibody.new
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-offset-4 col-md-4">
+  <div class="col-md-offset-3 col-md-6">
     <div class="panel">
       <div class="panel-body">
         <%= form_for @antibody, html: { multipart: true } do |f| %>
@@ -38,11 +38,6 @@
             <%= f.submit class: "btn btn-primary" %>
           </div>
         <% end %> 
-      </div>
-      <div class="panel-footer">
-        <p>
-          <%= link_to 'View Protocols', '#' %>
-        </p>
       </div>
     </div>
   </div>
