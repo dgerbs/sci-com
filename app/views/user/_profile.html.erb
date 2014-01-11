@@ -1,14 +1,37 @@
 <% provide(:title, "Home") %>
 
 <div class="row">
+
+  <!-- Profile secion -->
   <div class="col-xs-12 col-sm-3 col-md-2">
     <div class="profile_pic">
       <%= image_tag current_user.image_url(:small_thumb) %>
     </div>
+
+    <!-- Hard coded values as an example -->
+    <div class="stats">
+      <p>Following: 27</p>
+      <p>Followers: 52</p>
+    </div>
   </div>
-  <div class="col-xs-12 col-sm-6 col-md-8">Content console.</div>
+
+  <!-- Center Console -->
+  <div class="col-xs-12 col-sm-6 col-md-8">
+    <div id="status_feed">
+    </div>
+    <div id="console">
+    </div>
+  </div>
+
+  <!-- Sidebar navigation -->
   <div class="col-xs-12 col-sm-3 col-md-2">
     <div id="sidebar">
+      <li>
+        <%= link_to root_path, class: "btn btn-link" do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+          Publication Feed
+        <% end %>
+      </li>
       <li>
         <%= link_to '#', class: "btn btn-link" do %>
           <span class="glyphicon glyphicon-tasks"></span>
@@ -22,7 +45,7 @@
         <% end %>
       </li>
       <li>
-        <%= link_to antibodies_path, class: "btn btn-link" do %>
+        <%= link_to antibodies_path, remote: true, class: "btn btn-link" do %>
           <span class="glyphicon glyphicon-search"></span>
           Search Antibodies
         <% end %>
@@ -41,11 +64,12 @@
         <% end %>
       </li>
       <li>
-        <%= link_to new_antibody_path, class: "btn btn-link" do %>
+        <%= link_to new_antibody_path, remote: true, class: "btn btn-link" do %>
           <span class="glyphicon glyphicon-plus"></span>
           Antibody
         <% end %>
       </li>
     </div>
   </div>
+
 </div>
