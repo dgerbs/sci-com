@@ -26,7 +26,10 @@ class AntibodiesController < ApplicationController
   def create
     @antibody = Antibody.new(antibody_params)
     if @antibody.save
-      redirect_to @antibody, notice: 'Antibody successfully created.'
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Antibody successfully created.' }
+        format.js
+      end
     else
       render :new
     end
