@@ -1,8 +1,13 @@
 Sci::Application.routes.draw do
+
+  devise_for :users do
+    member do
+      get :following, :followers
+    end
+  end
   
   resources :antibodies
-
-  devise_for :users
+  resources :relationships, only: [:create, :destroy]
 
   root 'pages#home'
 
