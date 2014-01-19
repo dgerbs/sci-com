@@ -10,8 +10,10 @@
 
     <!-- Hard coded values as an example -->
     <div class="stats">
-      <p>Following: 27</p>
-      <p>Followers: 52</p>
+      <%= render 'users/stats' %>
+      <p>
+        <%= render 'users/follow_form' %>
+      </p>
     </div>
   </div>
 
@@ -26,6 +28,12 @@
   <!-- Sidebar navigation -->
   <div class="col-xs-12 col-sm-3 col-md-2">
     <div id="sidebar">
+      <li>
+        <%= link_to users_path, class: "btn btn-link" do %>
+          <span class="glyphicon glyphicon-user"></span>
+           All Users (admin)
+        <% end %>
+      </li>
       <li>
         <%= link_to root_path, class: "btn btn-link" do %>
           <span class="glyphicon glyphicon-list-alt"></span>
