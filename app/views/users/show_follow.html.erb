@@ -7,13 +7,6 @@
     </section>
     <section>
       <%= render 'users/stats' %>
-      <% if @users.any? %>
-        <div class="user_avatars">
-          <% @users.each do |user| %>
-            <%= link_to image_tag current_user.image_url(:small_thumb), user %>
-          <% end %>
-        </div>
-      <% end %>
     </section>
   </aside>
   <div>
