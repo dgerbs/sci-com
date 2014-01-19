@@ -4,28 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
-  def current_user?(user)
-    user == current_user
-  end
-
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:followers, :following) }
-  end
-
-   def following
-    @title = "Following"
-    @user  = User.find(params[:id])
-    @users = @user.followed_users.paginate(page: params[:page])
-    render 'show_follow'
-  end
-
-  def followers
-    @title = "Followers"
-    @user  = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
-    render 'show_follow'
-  end
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:followers, :following) }
+    end
 
 end
