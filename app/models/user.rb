@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :followers, through: :reverse_relationships, source: :follower
   has_many :followed_users, through: :relationships, source: :followed
 
+  has_many :ihcprotocols
+
   def following?(other_user)
     relationships.find_by_followed_id(other_user.id)
   end
