@@ -1,4 +1,4 @@
-class Ihcprotocols < ApplicationController
+class IhcprotocolsController < ApplicationController
   before_filter :authenticate_user!
 
   def show
