@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3>
+          <b>Immunohistochemistry Protocol:</b>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          <b>Tissue Type:</b>
+          <%= @ihcprotocol.tissue %>
+        </p>
+        <p>
+          <b>Fixation:</b>
+          <%= @ihcprotocol.fixation %>
+        </p>
+        <p>
+          <b>Washes:</b>
+          <%= @ihcprotocol.first_wash %>
+        </p>
+        <p>
+          <b>Methanol/Peroxidase:</b>
+          <%= @ihcprotocol.methpero %>
+        </p>
+        <p>
+          <b>Washes:</b>
+          <%= @ihcprotocol.second_wash %>
+        </p>
+        <p>
+          <b>Blocking:</b>
+          <%= @ihcprotocol.blocking %>
+        </p>
+        <p>
+          <b>Primary description:</b>
+          <%= @ihcprotocol.primary_description %>
+        </p>
+        <p>
+          <b>Washes:</b>
+          <%= @ihcprotocol.third_wash %>
+        </p>
+        <p>
+          <b>Signal enhancement:</b>
+          <%= @ihcprotocol.signal %>
+        </p>
+        <p>
+          <b>Washes:</b>
+          <%= @ihcprotocol.fourth_wash %>
+        </p>
+        <p>
+          <b>Dehydration:</b>
+          <%= @ihcprotocol.dehydration %>
+        </p>
+        <p>
+          <b>Mounting:</b>
+          <%= @ihcprotocol.mounting %>
+        </p>
+        <p>
+          <b>Helpful information about my protocol:</b>
+          <%= @ihcprotocol.information %>
+        </p>
+        <p>
+          <b>by:</b>
+          <% if current_user == @ihcprotocol.user %>
+            You
+          <% else %>
+            <%= @ihcprotocol.user.email %>
+          <% end %>
+        </p>
+        <p>
+          <b>posted:</b>
+          <%= time_ago_in_words(@ihcprotocol.created_at) %> ago.
+        </p>
+      </div>
+    
+      <br />
+      <div class="panel-footer">
+        <% if current_user == @ihcprotocol.user %>
+          <%= link_to 'Edit Protocol', edit_ihcprotocol_path(@ihcprotocol), class: "btn btn-primary" %>
+          <%= link_to 'Destroy Protocol', @ihcprotocol, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <% end %>
+      </div>     
+    </div>
+  </div>
+</div>

@@ -1,8 +1,12 @@
 class IhcprotocolsController < ApplicationController
   before_filter :authenticate_user!
 
+  def index
+    @ihcprotocols = Ihcprotocol.all
+  end
+
   def show
-    @ihcprotocol = Ihcprotocols.find(params[:id])
+    @ihcprotocol = Ihcprotocol.find(params[:id])
   end
 
   def new
@@ -61,7 +65,7 @@ class IhcprotocolsController < ApplicationController
   protected
 
     def ihc_params
-      params.require(:ihcprotocols).permit(:tissue, :fixation, :first_wash, :methpero, :second_wash, :blocking, 
+      params.require(:ihcprotocol).permit(:tissue, :fixation, :first_wash, :methpero, :second_wash, :blocking, 
                                                    :primary_description, :third_wash, :signal, :fourth_wash, :dehydration, 
                                                    :mounting, :information)
     end

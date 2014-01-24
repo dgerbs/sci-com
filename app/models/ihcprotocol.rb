@@ -6,7 +6,7 @@ class Ihcprotocol < ActiveRecord::Base
   validates_presence_of :methpero
   validates_presence_of :second_wash
   validates_presence_of :blocking
-  validates_presence_of :primary_descriptions
+  validates_presence_of :primary_description
   validates_presence_of :third_wash
   validates_presence_of :signal
   validates_presence_of :fourth_wash

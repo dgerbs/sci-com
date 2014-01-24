@@ -12,6 +12,12 @@ class AntibodiesController < ApplicationController
 
   def show
     @antibody = Antibody.find(params[:id])
+
+    if user_signed_in?
+      @ihcprotocols = @antibody.ihcprotocols
+    else
+      @antibody
+    end
   end
 
   def new
