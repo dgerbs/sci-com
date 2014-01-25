@@ -3,7 +3,6 @@
     <tr>
       <th>Tissue</th>
       <th>Primary description</th>
-      <th>Information</th>
       <th>Posted</th>
       <th>By</th>
     </tr>
@@ -14,7 +13,6 @@
     <tr>
       <td><%= protocol.tissue %></td>
       <td><%= protocol.primary_description %></td>
-      <td><%= protocol.information %></td>
       <td><%= time_ago_in_words(protocol.created_at) %> ago</td>
       <td>
         <% if current_user == protocol.user %>
@@ -23,7 +21,7 @@
           <%= link_to protocol.user.email, protocol.user %>
         <% end %>
       </td>
-      <td><%= link_to 'Info', protocol, class: "btn-link" %></td>
+      <td><%= link_to 'Show', protocol, class: "btn-link" %></td>
     </tr>
   <% end %>
   </tbody>
