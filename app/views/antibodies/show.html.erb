@@ -30,7 +30,7 @@
         </p>
         <p>
           <b>Protocols:</b>
-          <%= @antibody.ihcprotocols.count + @antibody.ibprotocols.count %>
+          <%= @antibody.ihcprotocols.count + @antibody.ibprotocols.count + @antibody.ifprotocols.count %>
         </p>
         <div class="btn-group">
           <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
@@ -38,9 +38,9 @@
           </button>
           <ul class="dropdown-menu" role="menu">
             <li><%= link_to "Immunohistochemistry", new_antibody_ihcprotocol_path(@antibody) %></li>
-            <li><%= link_to "Immunofluorescence",   '#' %></li>
+            <li><%= link_to "Immunofluorescence",   new_antibody_ifprotocol_path(@antibody)  %></li>
             <li><%= link_to "Immunoprecipitation",  '#' %></li>
-            <li><%= link_to "Immunoblot",           new_antibody_ibprotocol_path(@antibody) %></li>
+            <li><%= link_to "Immunoblot",           new_antibody_ibprotocol_path(@antibody)  %></li>
           </ul>
         </div>
       </div>
@@ -58,6 +58,17 @@
         <%= render 'ihcprotocols/ihcprotocol' %>
       <% else %>
         <%= @antibody.ihcprotocols.count %>
+      <% end %>
+    </p>
+  </div>
+  <div class="col-md-8">
+    <p>
+      <strong>Immunofluorescence:</strong>
+      <% if @antibody.ifprotocols.any? %>
+        <%= @antibody.ifprotocols.count %>
+        <%= render 'ifprotocols/ifprotocol' %>
+      <% else %>
+        <%= @antibody.ifprotocols.count %>
       <% end %>
     </p>
   </div>

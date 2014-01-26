@@ -66,7 +66,7 @@ class IfprotocolsController < ApplicationController
 
     def if_params
       params.require(:ifprotocol).permit(:cell, :fixation, :first_wash, :blocking, :primary_description, :second_wash, 
-                                         :secondary_description, :thid_wash, :coverslip, :information)
+                                         :secondary_description, :third_wash, :coverslip, :information)
     end
 
 end
