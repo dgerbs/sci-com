@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>By</th>
+      <th>Images</th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <% @ipreprotocols.each do |protocol| %>
+    <tr>
+      <td>
+        <% if current_user == protocol.user %>
+          You
+        <% else %>
+          <%= link_to protocol.user.email, protocol.user %>
+        <% end %>
+      </td>
+      <td>None</td>
+      <td><%= link_to 'Show', protocol, class: "btn-link" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -17,7 +17,8 @@
           <td><%= ab.antibody %></td>
           <td><%= ab.vendor %></td>
           <td></td>
-          <td><%= ab.ihcprotocols.count + ab.ibprotocols.count + ab.ifprotocols.count %></td>
+          <td><%= ab.ihcprotocols.count + ab.ibprotocols.count + ab.ifprotocols.count + 
+                  ab.ipreprotocols.count %></td>
           <td><%= link_to "Info", ab, class: "btn-link" %></td>
         </tr>
       <% end %>

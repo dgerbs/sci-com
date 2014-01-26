@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="panel">
+      <div class="panel-body">
+        <%= form_for([@antibody, @ipreprotocol], html: { multipart: true }) do |f| %>
+          <% if @ipreprotocol.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@ipreprotocol.errors.count, "error") %> prohibited this application from being saved:
+              </h2>
+              <ul>
+              <% @ipreprotocol.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="form-group">
+            <%= f.label "Cell" %>
+            <%= f.text_field :cell, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Lysis" %>
+            <%= f.text_field :lysis, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Sonication" %>
+            <%= f.text_field :sonication, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Sample concentration" %>
+            <%= f.text_field :sample_concentration, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Preclearing" %>
+            <%= f.text_field :preclearing, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Primary description" %>
+            <%= f.text_field :primary_description, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Antibody capture" %>
+            <%= f.text_field :ab_capture, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Washes" %>
+            <%= f.text_field :first_wash, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Sample preparation for IB" %>
+            <%= f.text_field :sample_prep, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Gel" %>
+            <%= f.text_field :gel, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Electrophoresis" %>
+            <%= f.text_field :electrophoresis, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Membrane" %>
+            <%= f.text_field :membrane, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Transfer" %>
+            <%= f.text_field :transfer, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Blocking" %>
+            <%= f.text_field :blocking, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Secondary description" %>
+            <%= f.text_field :secondary_description, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Washes" %>
+            <%= f.text_field :second_wash, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Tertiary description" %>
+            <%= f.text_field :tertiary_description, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Washes" %>
+            <%= f.text_field :third_wash, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Detection" %>
+            <%= f.text_field :detection, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Helpful information for my protocol" %>
+            <%= f.text_field :information, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Create Protocol", class: "btn btn-primary" %>
+          </div>
+        <% end %> 
+      </div>
+      <div class="panel-footer">
+      </div>
+    </div>
+  </div>
+</div>

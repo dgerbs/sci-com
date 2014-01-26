@@ -1,0 +1,123 @@
+<div class="row">
+  <div class="col-md-5">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3>
+          <b>Immunoprecipitation Protocol:</b>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          <b>Cell:</b>
+          <%= @ipreprotocol.cell %>
+        </p>
+        <p>
+          <b>Lysis:</b>
+          <%= @ipreprotocol.lysis %>
+        </p>
+        <p>
+          <b>Sonication:</b>
+          <%= @ipreprotocol.sonication %>
+        </p>
+        <p>
+          <b>Sample concentration:</b>
+          <%= @ipreprotocol.sample_concentration %>
+        </p>
+        <p>
+          <b>Preclearing:</b>
+          <%= @ipreprotocol.preclearing %>
+        </p>
+        <p>
+          <b>Primary description:</b>
+          <%= @ipreprotocol.primary_description %>
+        </p>
+        <p>
+          <b>Antibody capture:</b>
+          <%= @ipreprotocol.ab_capture %>
+        </p>
+        <p>
+          <b>Washes:</b>
+          <%= @ipreprotocol.first_wash %>
+        </p>
+        <p>
+          <b>Sample preparation for IB:</b>
+          <%= @ipreprotocol.sample_prep %>
+        </p>
+        <p>
+          <b>Gel:</b>
+          <%= @ipreprotocol.gel %>
+        </p>
+        <p>
+          <b>Electrophoresis:</b>
+          <%= @ipreprotocol.electrophoresis %>
+        </p>
+        <p>
+          <b>Membrane:</b>
+          <%= @ipreprotocol.membrane %>
+        </p>
+        <p>
+          <b>Transfer:</b>
+          <%= @ipreprotocol.transfer %>
+        </p>
+        <p>
+          <b>Blocking:</b>
+          <%= @ipreprotocol.blocking %>
+        </p>
+        <p>
+          <b>Secondary description:</b>
+          <%= @ipreprotocol.secondary_description %>
+        </p>
+        <p>
+          <b>Washes:</b>
+          <%= @ipreprotocol.second_wash %>
+        </p>
+        <p>
+          <b>Tertiary description:</b>
+          <%= @ipreprotocol.tertiary_description %>
+        </p>
+        <p>
+          <b>Washes:</b>
+          <%= @ipreprotocol.third_wash %>
+        </p>
+        <p>
+          <b>Detection:</b>
+          <%= @ipreprotocol.detection %>
+        </p>
+        <p>
+          <b>Helpful information about my protocol:</b>
+          <%= @ipreprotocol.information %>
+        </p>
+        <p>
+          <b>by:</b>
+          <% if current_user == @ipreprotocol.user %>
+            You
+          <% else %>
+            <%= @ipreprotocol.user.email %>
+          <% end %>
+        </p>
+        <p>
+          <b>posted:</b>
+          <%= time_ago_in_words(@ipreprotocol.created_at) %> ago.
+        </p>
+      </div>
+    
+      <br />
+      <div class="panel-footer">
+        <% if current_user == @ipreprotocol.user %>
+          <%= link_to 'Edit Protocol', edit_ipreprotocol_path(@ipreprotocol), class: "btn btn-primary" %>
+          <%= link_to 'Destroy Protocol', @ipreprotocol, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <% end %>
+      </div>     
+    </div>
+  </div>
+  <div class="col-md-7">
+    <style>
+    div.col-md-7 {
+      border: 1px solid black;
+    }
+    </style>
+    <p>
+      Images
+    </p>
+  </div>
+</div>
