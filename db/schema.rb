@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126165555) do
+ActiveRecord::Schema.define(version: 20140126194853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,25 @@ ActiveRecord::Schema.define(version: 20140126165555) do
   end
 
   add_index "ibprotocols", ["user_id", "antibody_id", "created_at"], name: "index_ibprotocols_on_user_id_and_antibody_id_and_created_at", using: :btree
+
+  create_table "ifprotocols", force: true do |t|
+    t.string   "cell",                  null: false
+    t.string   "fixation",              null: false
+    t.string   "first_wash",            null: false
+    t.string   "blocking",              null: false
+    t.string   "primary_description",   null: false
+    t.string   "second_wash",           null: false
+    t.string   "secondary_description", null: false
+    t.string   "third_wash",            null: false
+    t.string   "coverslip",             null: false
+    t.string   "information",           null: false
+    t.integer  "user_id",               null: false
+    t.integer  "antibody_id",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ifprotocols", ["user_id", "antibody_id", "created_at"], name: "index_ifprotocols_on_user_id_and_antibody_id_and_created_at", using: :btree
 
   create_table "ihcprotocols", force: true do |t|
     t.string   "tissue",              null: false
