@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126194853) do
+ActiveRecord::Schema.define(version: 20140126211149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,35 @@ ActiveRecord::Schema.define(version: 20140126194853) do
   end
 
   add_index "ihcprotocols", ["user_id", "antibody_id", "created_at"], name: "index_ihcprotocols_on_user_id_and_antibody_id_and_created_at", using: :btree
+
+  create_table "ipreprotocols", force: true do |t|
+    t.string   "cell",                  null: false
+    t.string   "lysis",                 null: false
+    t.string   "sonication",            null: false
+    t.string   "sample_concentration",  null: false
+    t.string   "preclearing",           null: false
+    t.string   "primary_description",   null: false
+    t.string   "ab_capture",            null: false
+    t.string   "first_wash",            null: false
+    t.string   "sample_prep",           null: false
+    t.string   "gel",                   null: false
+    t.string   "electrophoresis",       null: false
+    t.string   "membrane",              null: false
+    t.string   "transfer",              null: false
+    t.string   "blocking",              null: false
+    t.string   "secondary_description", null: false
+    t.string   "second_wash",           null: false
+    t.string   "tertiary_description",  null: false
+    t.string   "third_wash",            null: false
+    t.string   "detection",             null: false
+    t.string   "information",           null: false
+    t.integer  "user_id",               null: false
+    t.integer  "antibody_id",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ipreprotocols", ["user_id", "antibody_id", "created_at"], name: "index_ipreprotocols_on_user_id_and_antibody_id_and_created_at", using: :btree
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
