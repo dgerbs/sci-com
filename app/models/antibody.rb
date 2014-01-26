@@ -8,4 +8,5 @@ class Antibody < ActiveRecord::Base
 
   has_many :ihcprotocols, dependent: :destroy
   has_many :ibprotocols,  dependent: :destroy
+  has_many :ifprotocols,  dependent: :destroy
 end

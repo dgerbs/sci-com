@@ -16,6 +16,7 @@ class AntibodiesController < ApplicationController
     if user_signed_in?
       @ihcprotocols = @antibody.ihcprotocols
       @ibprotocols  = @antibody.ibprotocols
+      @ifprotocols  = @antibody.ifprotocols
     else
       @antibody
     end
