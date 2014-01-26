@@ -49,37 +49,26 @@
     </div>
   </div>
   <h3>Research Applications for <%= @antibody.antibody %>:</h3> 
-  <div class="col-md-2">
+  <div class="col-md-8">
+    <br>
     <p>
       <strong>Immunohistochemistry:</strong>
       <% if @antibody.ihcprotocols.any? %>
         <%= @antibody.ihcprotocols.count  %>
         <%= render 'ihcprotocols/ihcprotocol' %>
       <% else %>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="alert alert-warning">
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <strong>No Immunohistochemistry protocols associated with this antibody yet.</strong><br />
-            </div>
-          </div>
-        </div>
+        <%= @antibody.ihcprotocols.count %>
       <% end %>
     </p>
+  </div>
+  <div class="col-md-8">
     <p>
       <strong>Immunoblot:</strong>
       <% if @antibody.ibprotocols.any? %>
         <%= @antibody.ibprotocols.count %>
         <%= render 'ibprotocols/ibprotocol' %>
       <% else %>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="alert alert-warning">
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <strong>No Immunoblot protocols associated with this antibody yet.</strong><br />
-            </div>
-          </div>
-        </div>
+        <%= @antibody.ibprotocols.count %>
       <% end %>
     </p>
   </div>
