@@ -14,9 +14,10 @@ class AntibodiesController < ApplicationController
     @antibody = Antibody.find(params[:id])
 
     if user_signed_in?
-      @ihcprotocols = @antibody.ihcprotocols
-      @ibprotocols  = @antibody.ibprotocols
-      @ifprotocols  = @antibody.ifprotocols
+      @ihcprotocols  = @antibody.ihcprotocols
+      @ibprotocols   = @antibody.ibprotocols
+      @ifprotocols   = @antibody.ifprotocols
+      @ipreprotocols = @antibody.ipreprotocols
     else
       @antibody
     end

@@ -6,7 +6,8 @@ class Antibody < ActiveRecord::Base
   validates_presence_of :vendor
   validates_presence_of :isotype
 
-  has_many :ihcprotocols, dependent: :destroy
-  has_many :ibprotocols,  dependent: :destroy
-  has_many :ifprotocols,  dependent: :destroy
+  has_many :ihcprotocols,  dependent: :destroy
+  has_many :ibprotocols,   dependent: :destroy
+  has_many :ifprotocols,   dependent: :destroy
+  has_many :ipreprotocols, dependent: :destroy
 end
