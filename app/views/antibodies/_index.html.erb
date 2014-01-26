@@ -5,6 +5,8 @@
         <th>Target</th> 
         <th>Antibody</th>
         <th>Vendor</th>
+        <!-- if Approvals < 2, then "Approvals" == "Approval", else "Approvals" -->
+        <th>Approvals</th>
         <th>Protocols</th>
       </tr>
     </thead>
@@ -14,7 +16,8 @@
           <td><%= ab.target %></td>
           <td><%= ab.antibody %></td>
           <td><%= ab.vendor %></td>
-          <td><%= ab.ihcprotocols.count %></td>
+          <td></td>
+          <td><%= ab.ihcprotocols.count + ab.ibprotocols.count %></td>
           <td><%= link_to "Info", ab, class: "btn-link" %></td>
         </tr>
       <% end %>

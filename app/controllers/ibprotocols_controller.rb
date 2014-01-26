@@ -66,8 +66,8 @@ class IbprotocolsController < ApplicationController
 
     def ib_params
       params.require(:ibprotocol).permit(:cell_tissue, :lysis, :sonication, :sample_size, :sample_loading, :gel, 
-                                                   :electrophoresis, :membrane, :transfer, :primary_description, :first_wash, 
-                                                   :secondary_description, :second_wash, :detection, :information)
+                                         :electrophoresis, :membrane, :transfer, :blocking, :primary_description, 
+                                         :first_wash, :secondary_description, :second_wash, :detection, :information)
     end
 
 end

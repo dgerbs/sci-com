@@ -8,12 +8,12 @@ Sci::Application.routes.draw do
   end
   
   resources :antibodies, shallow: true do
-    resources :ihcprotocols, only: [:new, :create]
-    resources :ibprotocols, only: [:new, :create]
+    resources :ihcprotocols, only: [:new, :create, :index]
+    resources :ibprotocols,  only: [:new, :create, :index]
   end
 
-  resources :ihcprotocols, except: [:new, :create]
-  resources :ibprotocols, except: [:new, :create]
+  resources :ihcprotocols, except: [:new, :create, :index]
+  resources :ibprotocols,  except: [:new, :create, :index]
   resources :relationships, only: [:create, :destroy]
 
   root 'pages#home'

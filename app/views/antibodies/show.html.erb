@@ -29,8 +29,8 @@
           <%=  %>
         </p>
         <p>
-          <b>Research Applications:</b>
-          <%= @antibody.ihcprotocols.count %>
+          <b>Protocols:</b>
+          <%= @antibody.ihcprotocols.count + @antibody.ibprotocols.count %>
         </p>
         <div class="btn-group">
           <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
@@ -40,7 +40,7 @@
             <li><%= link_to "Immunohistochemistry", new_antibody_ihcprotocol_path(@antibody) %></li>
             <li><%= link_to "Immunofluorescence",   '#' %></li>
             <li><%= link_to "Immunoprecipitation",  '#' %></li>
-            <li><%= link_to "Immunoblot",           '#' %></li>
+            <li><%= link_to "Immunoblot",           new_antibody_ibprotocol_path(@antibody) %></li>
           </ul>
         </div>
       </div>
@@ -48,19 +48,39 @@
       </div>
     </div>
   </div>
-  <div class="col-md-8">
-    <% if @antibody.ihcprotocols.any? %>
-      <h3>Protocols for <%= @antibody.antibody %>:</h3>
-        <%= render :partial => 'ihcprotocols/ihcprotocol' %>
-    <% else %>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="alert alert-warning">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>No protocols associated with this antibody yet.</strong><br />
+  <h3>Research Applications for <%= @antibody.antibody %>:</h3> 
+  <div class="col-md-2">
+    <p>
+      <strong>Immunohistochemistry:</strong>
+      <% if @antibody.ihcprotocols.any? %>
+        <%= @antibody.ihcprotocols.count  %>
+        <%= render 'ihcprotocols/ihcprotocol' %>
+      <% else %>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-warning">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>No Immunohistochemistry protocols associated with this antibody yet.</strong><br />
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </p>
+    <p>
+      <strong>Immunoblot:</strong>
+      <% if @antibody.ibprotocols.any? %>
+        <%= @antibody.ibprotocols.count %>
+        <%= render 'ibprotocols/ibprotocol' %>
+      <% else %>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-warning">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>No Immunoblot protocols associated with this antibody yet.</strong><br />
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </p>
   </div>
 </div>
