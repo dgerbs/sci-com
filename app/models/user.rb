@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :followed_users, through: :relationships, source: :followed
 
   has_many :ihcprotocols, dependent: :destroy
+  has_many :ibprotocols,  dependent: :destroy
 
   def following?(other_user)
     relationships.find_by_followed_id(other_user.id)
