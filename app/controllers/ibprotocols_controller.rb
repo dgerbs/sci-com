@@ -31,7 +31,7 @@ class IbprotocolsController < ApplicationController
 
     respond_to do |format|
       if @ibprotocol.save
-        format.html { redirect_to @antibody, notice: "Immunoblot application successfully created!"}
+        format.html { redirect_to @antibody }
         format.js
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class IbprotocolsController < ApplicationController
 
     respond_to do |format|
       if @ibprotocol.update_attributes(ib_params)
-        format.html { redirect_to @ibprotocol, notice: "Immunoblot application successfully updated." }
+        format.html { redirect_to @ibprotocol }
         format.js
       else
         render :edit
@@ -57,7 +57,7 @@ class IbprotocolsController < ApplicationController
     @antibody = Antibody.find(params[:id])
 
     respond_to do |format|
-      format.html { redirect_to @antibody, notice: "Immunoblot application successfully destroyed." }
+      format.html { redirect_to @antibody }
       format.js
     end
   end

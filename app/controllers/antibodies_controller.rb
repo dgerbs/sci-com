@@ -36,7 +36,7 @@ class AntibodiesController < ApplicationController
     @antibody = Antibody.new(antibody_params)
     if @antibody.save
       respond_to do |format|
-        format.html { redirect_to root_path, notice: 'Antibody successfully created.' }
+        format.html { redirect_to root_path }
         format.js
       end
     else
@@ -55,7 +55,7 @@ class AntibodiesController < ApplicationController
   def update
     @antibody = Antibody.find(params[:id])
     if @antibody.update(antibody_params)
-      redirect_to @antibody, notice: 'Antibody successfully updated.'
+      redirect_to @antibody
     else
       render :edit
     end

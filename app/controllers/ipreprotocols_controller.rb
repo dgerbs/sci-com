@@ -31,7 +31,7 @@ class IpreprotocolsController < ApplicationController
 
     respond_to do |format|
       if @ipreprotocol.save
-        format.html { redirect_to @antibody, notice: "Immunoprecipitation application successfully created!"}
+        format.html { redirect_to @antibody }
         format.js
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class IpreprotocolsController < ApplicationController
 
     respond_to do |format|
       if @ipreprotocol.update_attributes(ipre_params)
-        format.html { redirect_to @ipreprotocol, notice: "Immunoprecipitation application successfully updated." }
+        format.html { redirect_to @ipreprotocol }
         format.js
       else
         render :edit
@@ -57,7 +57,7 @@ class IpreprotocolsController < ApplicationController
     @antibody = Antibody.find(params[:id])
 
     respond_to do |format|
-      format.html { redirect_to @antibody, notice: "Immunoprecipitation application successfully destroyed." }
+      format.html { redirect_to @antibody }
       format.js
     end
   end

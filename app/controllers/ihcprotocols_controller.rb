@@ -31,7 +31,7 @@ class IhcprotocolsController < ApplicationController
 
     respond_to do |format|
       if @ihcprotocol.save
-        format.html { redirect_to @antibody, notice: "Immunohistochemistry application successfully created!"}
+        format.html { redirect_to @antibody }
         format.js
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class IhcprotocolsController < ApplicationController
 
     respond_to do |format|
       if @ihcprotocol.update_attributes(ihc_params)
-        format.html { redirect_to @ihcprotocol, notice: "Immunohistochemistry application successfully updated." }
+        format.html { redirect_to @ihcprotocol }
         format.js
       else
         render :edit
@@ -57,7 +57,7 @@ class IhcprotocolsController < ApplicationController
     @antibody = Antibody.find(params[:id])
 
     respond_to do |format|
-      format.html { redirect_to @antibody, notice: "Immunohistochemistry application successfully destroyed." }
+      format.html { redirect_to @antibody }
       format.js
     end
   end
