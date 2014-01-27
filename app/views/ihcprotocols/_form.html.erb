@@ -8,13 +8,13 @@
         <%= form_for([@antibody, @ihcprotocol], html: { multipart: true }) do |f| %>
           <% if @ihcprotocol.errors.any? %>
             <div id="error_explanation">
-              <h2><%= pluralize(@ihcprotocol.errors.count, "error") %> prohibited this application from being saved:
-              </h2>
-              <ul>
-              <% @ihcprotocol.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-              </ul>
+              <div class="alert alert-danger">
+                <p><strong><%= pluralize(@ihcprotocol.errors.count, "error") %></strong> prohibited this application from being saved.
+                </p>
+                <p>
+                  Please make sure all fields are filled.
+                </p>
+              </div>
             </div>
           <% end %>
           <div class="form-group">
