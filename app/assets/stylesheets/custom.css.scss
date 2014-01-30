@@ -13,6 +13,22 @@ body {
   background-image: url('dna-lg.png');
 }
 
+
+#error_explanation h2 {
+  text-align: left;
+  font-size: 1em;
+  margin-top: -5px;
+}
+
+#error_explanation ul {
+  font-size: 0.85em;
+  list-style: none;
+  margin-left: -20px;
+}
+
+
+
+
 .panel {
   box-shadow: 3px 3px 10px;
 }
