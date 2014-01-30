@@ -13,13 +13,14 @@ class AntibodiesController < ApplicationController
   def show
     @antibody = Antibody.find(params[:id])
 
-    if user_signed_in?
-      @ihcprotocols  = @antibody.ihcprotocols
-      @ibprotocols   = @antibody.ibprotocols
-      @ifprotocols   = @antibody.ifprotocols
-      @ipreprotocols = @antibody.ipreprotocols
-    else
-      @antibody
+    @ihcprotocols  = @antibody.ihcprotocols
+    @ibprotocols   = @antibody.ibprotocols
+    @ifprotocols   = @antibody.ifprotocols
+    @ipreprotocols = @antibody.ipreprotocols
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

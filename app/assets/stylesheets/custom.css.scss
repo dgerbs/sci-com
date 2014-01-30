@@ -26,9 +26,6 @@ body {
   margin-left: -20px;
 }
 
-
-
-
 .panel {
   box-shadow: 3px 3px 10px;
 }
@@ -93,6 +90,10 @@ body {
       text-decoration: none;
     }
   }
+}
+
+.app_nav span {
+  float: right;
 }
 
 footer {
