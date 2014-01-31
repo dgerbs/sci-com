@@ -53,35 +53,29 @@
           <p>
             Immunohistochemistry: 
             <%= @antibody.ihcprotocols.count %>
-            <span><%= link_to "Show", [@antibody, @ihcprotocol], remote: true, class: 'btn btn-xs btn-primary' %></span>
+            <span><%= link_to "Show", antibody_ihcprotocols_path(@antibody.ihcprotocols, @ihcprotocol), remote: true, class: 'btn btn-xs btn-primary' %></span>
           </p>
           <p>
             Immunofluorescence: 
             <%= @antibody.ifprotocols.count %>
-            <span><%= link_to "Show", [@antibody, @ifprotocol], remote: true, class: 'btn btn-xs btn-primary' %></span>
+            <span><%= link_to "Show", antibody_ifprotocols_path(@antibody.ifprotocols, @ifprotocol), remote: true, class: 'btn btn-xs btn-primary' %></span>
           </p>
           <p>
             Immunoprecipitation: 
             <%= @antibody.ipreprotocols.count %>
-            <span><%= link_to "Show", [@antibody, @ipreprotocol], remote: true, class: 'btn btn-xs btn-primary' %></span>
+            <span><%= link_to "Show", antibody_ipreprotocols_path(@antibody.ipreprotocols, @ipreprotocol), remote: true, class: 'btn btn-xs btn-primary' %></span>
           </p>
           <p>
             Immunoblot: 
             <%= @antibody.ibprotocols.count %>
-            <span><%= link_to "Show", [@antibody, @ibprotocol], remote: true, class: 'btn btn-xs btn-primary' %></span>
+            <span><%= link_to "Show", antibody_ibprotocols_path(@antibody.ibprotocols, @ibprotocol), remote: true, class: 'btn btn-xs btn-primary' %></span>
           </p>
         </div>
       </div>
     </div>
   </div> 
   <div class="col-md-8">
-    <div id="ihc_view">
-    </div>
-    <div id="if_view">
-    </div>
-    <div id="ipre_view">
-    </div>
-    <div id="ib_view">
+    <div id="app_view">
     </div>
   </div>
 </div>
