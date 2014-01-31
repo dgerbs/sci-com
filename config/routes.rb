@@ -8,13 +8,13 @@ Sci::Application.routes.draw do
   end
   
   resources :antibodies, shallow: true do
-    resources :ihcprotocols,   only: [:new, :create]
+    resources :ihcprotocols
     resources :ibprotocols,    only: [:new, :create]
     resources :ifprotocols,    only: [:new, :create]
     resources :ipreprotocols,  only: [:new, :create]
   end
 
-  resources :ihcprotocols,  except: [:new, :create]
+  resources :ihcprotocols
   resources :ibprotocols,   except: [:new, :create]
   resources :ifprotocols,   except: [:new, :create]
   resources :ipreprotocols, except: [:new, :create]
