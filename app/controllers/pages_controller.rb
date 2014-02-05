@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   def home
     if user_signed_in?
-      @ibprotocol = current_user.ibprotocols.build
+      @ihcprotocol = current_user.ihcprotocols.build
+      @ibprotocol  = current_user.ibprotocols.build
       @feed_items  = current_user.feed
     end
   end

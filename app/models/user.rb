@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   has_many :ipreprotocols, dependent: :destroy
 
   def feed
+    Ihcprotocol.from_users_followed_by(self)
     Ibprotocol.from_users_followed_by(self)
   end
 

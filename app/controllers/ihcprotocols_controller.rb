@@ -34,6 +34,7 @@ class IhcprotocolsController < ApplicationController
         format.html { redirect_to @antibody }
         format.js
       else
+        @feed_items = []
         format.html { render :new }
       end
     end
