@@ -4,7 +4,6 @@
   
   <!-- Console -->
   <div class="col-xs-12 col-md-8">
-    <h3>Publication Feed</h3>
     <div id="console">
       <!-- render sidebar navigation actions here -->
     </div>
@@ -14,41 +13,22 @@
   <div class="col-xs-12 col-md-4">
     <div id="sidebar">
       <li>
-        <%= link_to users_path, class: "btn btn-link" do %>
-          <span class="glyphicon glyphicon-user"></span>
-           All Users (admin)
-        <% end %>
-      </li>
-      <li>
         <%= link_to current_user, class: "btn btn-link" do %>
           <span class="glyphicon glyphicon-list-alt"></span>
           My Profile
         <% end %>
       </li>
+      <li>
+        <%= link_to root_path, class: "btn btn-link" do %>
+          <span class="glyphicon glyphicon-list"></span>
+          Publication Feed
+        <% end %>
+      </li>
       <hr>
-       <li>
-        <%= link_to '#', class: "btn btn-link" do %>
-          <span class="glyphicon glyphicon-folder-close"></span>
-          Documents
-        <% end %>
-      </li>
       <li>
-        <%= link_to '#', class: "btn btn-link" do %>
-          <span class="glyphicon glyphicon-tasks"></span>
-          Protocols
-        <% end %>
-      </li>
-      <li>
-        <%= link_to antibodies_path, class: "btn btn-link" do %>
+        <%= link_to antibodies_path, remote: true, class: "btn btn-link" do %>
           <span class="glyphicon glyphicon-search"></span>
           Antibodies
-        <% end %>
-      </li>
-      <hr>
-      <li>
-        <%= link_to '#', class: "btn btn-link" do %>
-          <span class="glyphicon glyphicon-paperclip"></span> 
-          Document
         <% end %>
       </li>
       <li>

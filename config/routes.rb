@@ -1,10 +1,14 @@
 Sci::Application.routes.draw do
 
   devise_for :users 
-  resources :users do
+  resources :users, shallow: true do
     member do
       get :following, :followers
     end
+    resources :ihcprotocols
+    resources :ibprotocols
+    resources :ifprotocols
+    resources :ipreprotocols
   end
   
   resources :antibodies, shallow: true do
