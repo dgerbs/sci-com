@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   has_many :ipreprotocols, dependent: :destroy
 
   def feed
-    Ibprotocol.where("user_id = ?", id)
+    Ibprotocol.from_users_followed_by(self)
   end
 
   def following?(other_user)
