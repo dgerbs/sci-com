@@ -7,11 +7,17 @@
     <div class="profile_pic">
         <%= image_tag current_user.image_url(:small_thumb) %>
     </div>
+    <section>
+      <h3>
+        <%= @user.name %>
+      </h3>
+    </section>
     <div class="stats">
       <%= render 'users/stats' %>
       <p>
         <%= render 'users/follow_form' %>
       </p>
+      <br>
       <p>
         <%= link_to "Publication Feed", root_path %>
       </p>
@@ -19,13 +25,8 @@
   </div>
 
   <!-- User stats section -->
-  <div class="col-xs-12 col-sm-6 col-md-8">
-    <section>
-      <h3>
-        <%= @user.name %>
-      </h3>
-    </section>
-    <section>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <section class="well">
       <p>
         <strong>Current occupation:</strong>
         <%= @user.occupation %>
@@ -34,22 +35,25 @@
         <strong>Research interests:</strong>
         <%= @user.interests %>
       </p>
-      <p>
-        <strong>Immunohistochemistry protocols:</strong>
-        <%= @user.ihcprotocols.count %>
-      </p>
-      <p>
-        <strong>Immunofluorescence protocols:</strong>
-        <%= @user.ifprotocols.count %>
-      </p>
-      <p>
-        <strong>Immunoprecipitation protocols:</strong>
-        <%= @user.ipreprotocols.count %>
-      </p>
-      <p>
-        <strong>Immunoblot protocols:</strong>
-        <%= @user.ibprotocols.count %>
-      </p>
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="badge"><%= @user.ihcprotocols.count %></span>
+          Immunohistochemistry protocols:
+        </li>
+        <li class="list-group-item">
+          <span class="badge"><%= @user.ifprotocols.count %></span>
+          Immunofluorescence protocols:
+        </li>
+           <li class="list-group-item">
+          <span class="badge"><%= @user.ipreprotocols.count %></span>
+          Immunoprecipitation protocols:
+        </li>
+           <li class="list-group-item">
+          <span class="badge"><%= @user.ibprotocols.count %></span>
+          Immunoblot protocols:
+        </li>
+      </ul>
     </section>
   </div>
 </div>
