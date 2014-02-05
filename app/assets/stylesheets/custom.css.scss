@@ -62,14 +62,14 @@ body {
   a {
     float: left;
     padding: 0 10px;
-    color: gray;
+    color: #186f99;
     &:first-child {
       padding-left: 0;
       border: 0;
     }
     &:hover {
       text-decoration: none;
-      color: blue;
+      color: $brand-primary;
     }
   }
   strong {

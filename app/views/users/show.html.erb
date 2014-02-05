@@ -18,9 +18,18 @@
         <%= render 'users/follow_form' %>
       </p>
       <br>
-      <p>
-        <%= link_to "Publication Feed", root_path %>
-      </p>
+        <li>
+          <%= link_to root_path, class: "btn btn-link" do %>
+            <span class="glyphicon glyphicon-list"></span>
+            Publication Feed
+          <% end %>
+        </li>
+    </div>
+  </div>
+
+  <!-- User protocols display -->
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <div id="app_view">
     </div>
   </div>
 
@@ -39,19 +48,23 @@
       <ul class="list-group">
         <li class="list-group-item">
           <span class="badge"><%= @user.ihcprotocols.count %></span>
-          Immunohistochemistry protocols:
+          <%= link_to "Immunohistochemistry protocols:", user_ihcprotocols_path(@user.ihcprotocols, @ihcprotocol), remote: true %>
         </li>
         <li class="list-group-item">
           <span class="badge"><%= @user.ifprotocols.count %></span>
-          Immunofluorescence protocols:
+          <%= link_to "Immunofluorescence protocols:", user_ifprotocols_path(@user.ifprotocols, @ifprotocol), remote: true %>
         </li>
-           <li class="list-group-item">
+        <li class="list-group-item">
           <span class="badge"><%= @user.ipreprotocols.count %></span>
-          Immunoprecipitation protocols:
+          <%= link_to "Immunoprecipitation protocols:", user_ipreprotocols_path(@user.ipreprotocols, @ipreprotocol), remote: true %>
         </li>
-           <li class="list-group-item">
+        <li class="list-group-item">
           <span class="badge"><%= @user.ibprotocols.count %></span>
-          Immunoblot protocols:
+          <%= link_to "Immunoblot protocols:", user_ibprotocols_path(@user.ibprotocols, @ibprotocol), remote: true %>
+        </li>
+        <li class="list-group-item">
+          <span class="badge">32</span>
+          <%= link_to "Documents:", '#' %>
         </li>
       </ul>
     </section>

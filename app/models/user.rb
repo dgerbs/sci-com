@@ -22,6 +22,11 @@ class User < ActiveRecord::Base
   has_many :ifprotocols,   dependent: :destroy
   has_many :ipreprotocols, dependent: :destroy
 
+  def feed
+    Ihcprotocol.from_users_followed_by(self)
+    Ibprotocol.from_users_followed_by(self)
+  end
+
   def following?(other_user)
     relationships.find_by_followed_id(other_user.id)
   end
