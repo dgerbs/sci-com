@@ -1,17 +1,16 @@
 <% provide(:title, @title) %>
 <div class="row">
-  <aside class="col-xs-12 col-md-6 col-md-offset-2">
+  <aside class="col-xs-12 col-md-3 col-md-offset-2">
     <section>
       <h3>
-        <%= @user.name %>
+        <%= link_to @user.name, @user %>
       </h3>
-      <span><%= link_to "My profile", current_user %></span>
     </section>
     <section>
       <%= render 'users/stats' %>
     </section>
   </aside>
-  <div>
+  <div class="col-xs-12 col-md-3">
     <h3><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users">
