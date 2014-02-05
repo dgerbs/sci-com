@@ -1,11 +1,11 @@
 <% provide(:title, @title) %>
 <div class="row">
-  <aside class="col-xs-12 col-md-6 col-md-offset-3">
+  <aside class="col-xs-12 col-md-6 col-md-offset-2">
     <section>
-      <h2>
-        <%= @user.email %>
-      </h2>
-      <span><%= link_to "view my profile", root_path %></span>
+      <h3>
+        <%= @user.name %>
+      </h3>
+      <span><%= link_to "My profile", current_user %></span>
     </section>
     <section>
       <%= render 'users/stats' %>

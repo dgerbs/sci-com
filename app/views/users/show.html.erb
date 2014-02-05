@@ -1,25 +1,56 @@
-<% provide(:title, @user) %>
+<% provide(:title, @user.name) %>
 
 <div class="row">
   <div class="col-xs-12 col-sm-3 col-md-2">
+
+    <!-- Profile secion -->
     <div class="profile_pic">
-      <%= image_tag @user.image_url(:small_thumb) %>
+        <%= image_tag current_user.image_url(:small_thumb) %>
     </div>
     <div class="stats">
       <%= render 'users/stats' %>
       <p>
         <%= render 'users/follow_form' %>
       </p>
+      <p>
+        <%= link_to "Publication Feed", root_path %>
+      </p>
     </div>
-    <p>
-      <%= link_to "view my profile", root_path %>
-    </p>
-  </div> 
+  </div>
+
+  <!-- User stats section -->
   <div class="col-xs-12 col-sm-6 col-md-8">
     <section>
-      <h2>
-        <%= @user.email %>
-      </h2>
+      <h3>
+        <%= @user.name %>
+      </h3>
+    </section>
+    <section>
+      <p>
+        <strong>Current occupation:</strong>
+        <%= @user.occupation %>
+      </p>
+      <p>
+        <strong>Research interests:</strong>
+        <%= @user.interests %>
+      </p>
+      <p>
+        <strong>Immunohistochemistry protocols:</strong>
+        <%= @user.ihcprotocols.count %>
+      </p>
+      <p>
+        <strong>Immunofluorescence protocols:</strong>
+        <%= @user.ifprotocols.count %>
+      </p>
+      <p>
+        <strong>Immunoprecipitation protocols:</strong>
+        <%= @user.ipreprotocols.count %>
+      </p>
+      <p>
+        <strong>Immunoblot protocols:</strong>
+        <%= @user.ibprotocols.count %>
+      </p>
     </section>
   </div>
 </div>
+
