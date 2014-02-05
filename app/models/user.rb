@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  validates_presence_of :name
+  validates_presence_of :occupation
+  validates_presence_of :interests
+
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :reverse_relationships, foreign_key: "followed_id",
                                    class_name: "Relationship",
