@@ -10,7 +10,8 @@ $brand-primary: #4ea3cc;
 @import 'bootstrap';
 
 body {
-  background-image: url('dna-lg.png');
+  background: url('dna-lg.png') no-repeat;
+  padding-bottom: 70px;
 }
 
 
@@ -31,7 +32,7 @@ body {
 }
 
 .show {
-  margin-top: 25px;
+  margin-top: 5px;
 }
 
 .navbar-header {
