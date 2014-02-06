@@ -1,6 +1,7 @@
 Sci::Application.routes.draw do
 
   devise_for :users 
+
   resources :users, shallow: true do
     member do
       get :following, :followers
@@ -12,6 +13,7 @@ Sci::Application.routes.draw do
   end
   
   resources :antibodies, shallow: true do
+    post :vote, on: :member
     resources :ihcprotocols
     resources :ibprotocols
     resources :ifprotocols

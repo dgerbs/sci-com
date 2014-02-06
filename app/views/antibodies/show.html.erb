@@ -25,10 +25,6 @@
           <%= @antibody.isotype %>
         </p>
         <p>
-          <b>Approvals:</b>
-          <%=  %>
-        </p>
-        <p>
           <b>Protocols:</b>
           <%= @antibody.ihcprotocols.count + @antibody.ifprotocols.count + @antibody.ipreprotocols.count + @antibody.ibprotocols.count %>
         </p>
@@ -45,6 +41,20 @@
         </div>
       </div>
       <div class="panel-footer">
+        <p>
+          <%= pluralize @antibody.reputation_for(:votes).to_i, "rating" %>
+          <% if current_user && !current_user.voted_for?(@antibody) %>
+            <%= link_to vote_antibody_path(@antibody, type: "up"), method: "post" do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+            <% end %>| 
+            <%= link_to vote_antibody_path(@antibody, type: "down"), method: "post" do %>
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+            <% end %>
+          <% end %>
+          <% if flash[:alert] %>
+            <div class="alert alert-success" id="rating"><%= flash[:alert] %></div>
+          <% end %>
+        </p>
       </div>
     </div>
     <div class="app_nav">
