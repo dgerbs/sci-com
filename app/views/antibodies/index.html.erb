@@ -7,8 +7,7 @@
             <th>Target</th> 
             <th>Antibody</th>
             <th>Vendor</th>
-            <!-- if Approvals < 2, then "Approvals" == "Approval", else "Approvals" -->
-            <th>Approvals</th>
+            <th>Ratings</th>
             <th>Protocols</th>
           </tr>
         </thead>
@@ -18,7 +17,7 @@
               <td><%= ab.target %></td>
               <td><%= ab.antibody %></td>
               <td><%= ab.vendor %></td>
-              <td></td>
+              <td><%= ab.reputation_for(:votes).to_i %></td>
               <td><%= ab.ihcprotocols.count + ab.ibprotocols.count + ab.ifprotocols.count + 
                       ab.ipreprotocols.count %></td>
               <td><%= link_to "Info", ab, class: "btn-link" %></td>

@@ -22,6 +22,12 @@ class User < ActiveRecord::Base
   has_many :ifprotocols,   dependent: :destroy
   has_many :ipreprotocols, dependent: :destroy
 
+  has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :source
+
+  def voted_for?(antibody)
+    evaluations.where(target_type: antibody.class, target_id: antibody.id).present?
+  end
+
   def feed
     Ihcprotocol.from_users_followed_by(self)
     Ibprotocol.from_users_followed_by(self)
