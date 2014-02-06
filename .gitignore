@@ -23,4 +23,3 @@ doc/
 /.env
 /public/uploads
 /config/database.yml
-/db/antibodymaster.csv
