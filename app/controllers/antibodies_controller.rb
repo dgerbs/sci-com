@@ -2,7 +2,7 @@ class AntibodiesController < ApplicationController
   before_filter :authenticate_user!, except: [:index]
 
   def index
-    @antibodies = Antibody.text_search(params[:query]).paginate(page: params[:page]).per_page(12)
+    @antibodies = Antibody.text_search(params[:query]).paginate(page: params[:page]).per_page(12).find_with_reputation(:votes, :all, order: "votes desc")
   end
 
   def show
@@ -64,6 +64,13 @@ class AntibodiesController < ApplicationController
     else
       render @antibody
     end
+  end
+
+   def vote
+    value = params[:type] == "up" ? 1 : -1
+    @antibody = Antibody.find(params[:id])
+    @antibody.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for your rating!"
   end
 
   protected

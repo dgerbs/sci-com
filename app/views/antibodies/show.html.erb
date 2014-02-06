@@ -25,8 +25,9 @@
           <%= @antibody.isotype %>
         </p>
         <p>
-          <b>Approvals:</b>
-          <%=  %>
+          <%= pluralize @antibody.reputation_for(:votes).to_i, "rating" %> |
+          <%= link_to "Up", vote_antibody_path(@antibody, type: "up"), class: "glyphicon glyphicon-thumbs-up", method: "post" %> | 
+          <%= link_to "Down", vote_antibody_path(@antibody, type: "down"), class: "glyphicon glyphicon-thumbs-down", method: "post" %>
         </p>
         <p>
           <b>Protocols:</b>

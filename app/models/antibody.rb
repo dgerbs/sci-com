@@ -22,4 +22,6 @@ class Antibody < ActiveRecord::Base
       scoped
     end
   end
+
+  has_reputation :votes, source: :user, aggregated_by: :sum
 end
