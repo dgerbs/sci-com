@@ -15,6 +15,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
+gem 'pg_search'
 gem 'newrelic_rpm'
 
 group :doc do

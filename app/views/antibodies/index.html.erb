@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Target</th> 
+            <th>Antibody</th>
+            <th>Vendor</th>
+            <!-- if Approvals < 2, then "Approvals" == "Approval", else "Approvals" -->
+            <th>Approvals</th>
+            <th>Protocols</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @antibodies.each do |ab| %>
+            <tr>
+              <td><%= ab.target %></td>
+              <td><%= ab.antibody %></td>
+              <td><%= ab.vendor %></td>
+              <td></td>
+              <td><%= ab.ihcprotocols.count + ab.ibprotocols.count + ab.ifprotocols.count + 
+                      ab.ipreprotocols.count %></td>
+              <td><%= link_to "Info", ab, class: "btn-link" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@ class AntibodiesController < ApplicationController
   before_filter :authenticate_user!, except: [:index]
 
   def index
-    @antibodies = Antibody.all
+    @antibodies = Antibody.text_search(params[:query])
   end
 
   def show
