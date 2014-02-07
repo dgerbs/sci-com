@@ -28,11 +28,6 @@ class User < ActiveRecord::Base
     evaluations.where(target_type: antibody.class, target_id: antibody.id).present?
   end
 
-  def feed
-    Ihcprotocol.from_users_followed_by(self)
-    Ibprotocol.from_users_followed_by(self)
-  end
-
   def following?(other_user)
     relationships.find_by_followed_id(other_user.id)
   end
