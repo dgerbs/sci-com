@@ -1,6 +1,6 @@
 class Ibprotocol < ActiveRecord::Base
   include PublicActivity::Model
-  tracked
+  tracked owner: ->(controller, model) { controller && controller.current_user }
 
 
   validates_presence_of :cell_tissue

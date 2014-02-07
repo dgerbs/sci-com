@@ -27,6 +27,8 @@ Sci::Application.routes.draw do
   
   resources :relationships, only: [:create, :destroy]
 
+  resources :publications
+
   root 'pages#home'
 
   get 'about'   => 'pages#about'

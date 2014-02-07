@@ -1,6 +1,6 @@
 class Ihcprotocol < ActiveRecord::Base
   include PublicActivity::Model
-  tracked
+  tracked owner: ->(controller, model) { controller && controller.current_user }
 
   validates_presence_of :tissue
   validates_presence_of :fixation

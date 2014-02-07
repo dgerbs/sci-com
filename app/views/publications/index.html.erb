@@ -1,0 +1,9 @@
+<h1>Publications</h1>
+<p>
+<% @publications.each do |pub| %>
+  <div class="publication">
+    <%= link_to pub.owner.name, pub.owner if pub.owner %>
+    added a new protocol to <%= link_to pub.trackable.antibody, pub.trackable.antibody %>
+  </div>
+<% end %>
+</p>
