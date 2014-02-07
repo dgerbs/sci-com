@@ -1,6 +1,5 @@
 class Antibody < ActiveRecord::Base
-  include PublicActivity::Model
-  tracked owner: ->(controller, model) { controller && controller.current_user }
+  include PublicActivity::Common
 
   include PgSearch
   pg_search_scope :search, against: [:product, :antibody, :target, :vendor, :isotype],

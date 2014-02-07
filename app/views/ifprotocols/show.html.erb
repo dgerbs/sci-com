@@ -59,6 +59,10 @@
           <b>posted:</b>
           <%= time_ago_in_words(@ifprotocol.created_at) %> ago.
         </p>
+        <p>
+          <b>on:</b>
+          <%= link_to @ifprotocol.antibody.antibody, @ifprotocol.antibody %>
+        </p>
       </div>
     
       <br />

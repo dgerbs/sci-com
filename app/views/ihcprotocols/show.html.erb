@@ -71,6 +71,10 @@
           <b>posted:</b>
           <%= time_ago_in_words(@ihcprotocol.created_at) %> ago.
         </p>
+        <p>
+          <b>on:</b>
+          <%= link_to @ihcprotocol.antibody.antibody, @ihcprotocol.antibody %>
+        </p>
       </div>
     
       <br />

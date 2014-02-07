@@ -27,7 +27,7 @@ Sci::Application.routes.draw do
   
   resources :relationships, only: [:create, :destroy]
 
-  resources :publications
+  resources :publications, except: :index
 
   root 'pages#home'
 

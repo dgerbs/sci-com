@@ -83,6 +83,10 @@
           <b>posted:</b>
           <%= time_ago_in_words(@ibprotocol.created_at) %> ago.
         </p>
+        <p>
+          <b>on:</b>
+          <%= link_to @ibprotocol.antibody.antibody, @ibprotocol.antibody %>
+        </p>
       </div>
     
       <br />
