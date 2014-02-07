@@ -2,7 +2,8 @@ class Antibody < ActiveRecord::Base
 
   include PgSearch
   pg_search_scope :search, against: [:product, :antibody, :target, :vendor, :isotype],
-    using: { tsearch: { dictionary: "english" } }
+    using: { tsearch: { dictionary: "english" } },
+    associated_against: { ihcprotocols: :tissue, ibprotocols: :cell_tissue, ifprotocols: :cell, ipreprotocols: :cell }
 
   validates_presence_of :product
   validates_presence_of :antibody
@@ -17,7 +18,14 @@ class Antibody < ActiveRecord::Base
 
   def self.text_search(query)
     if query.present?
-      search(query)
+      rank = <<-RANK
+        ts_rank(to_tsvector(product),  plainto_tsquery(#{sanitize(query)})) +
+        ts_rank(to_tsvector(antibody), plainto_tsquery(#{sanitize(query)})) +
+        ts_rank(to_tsvector(target),   plainto_tsquery(#{sanitize(query)})) +
+        ts_rank(to_tsvector(vendor),   plainto_tsquery(#{sanitize(query)})) +
+        ts_rank(to_tsvector(isotype),  plainto_tsquery(#{sanitize(query)}))
+      RANK
+      where("product @@ :q or antibody @@ :q or target @@ :q or vendor @@ :q or isotype @@ :q", q: query).order("target desc")
     else
       scoped
     end
