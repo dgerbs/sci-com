@@ -1,4 +1,7 @@
 class Ibprotocol < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked
+
 
   validates_presence_of :cell_tissue
   validates_presence_of :lysis

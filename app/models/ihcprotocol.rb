@@ -1,4 +1,6 @@
 class Ihcprotocol < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked
 
   validates_presence_of :tissue
   validates_presence_of :fixation

@@ -1,4 +1,6 @@
 class Ipreprotocol < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked
 
   validates_presence_of :cell
   validates_presence_of :lysis
