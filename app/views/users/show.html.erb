@@ -17,22 +17,21 @@
       <p>
         <%= render 'users/follow_form' %>
       </p>
-      
-      <br>
-
-      <li>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">
         <%= link_to current_user, class: "btn btn-link" do %>
-        <span class="glyphicon glyphicon-list-alt"></span>
-        My Profile
-      <% end %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+          My Profile
+        <% end %>
       </li>
-      <li>
+      <li class="list-group-item">
         <%= link_to root_path, class: "btn btn-link" do %>
           <span class="glyphicon glyphicon-list"></span>
           Publications
         <% end %>
       </li>
-    </div>
+    </ul>
   </div>
 
   <!-- User protocols display -->

@@ -92,7 +92,7 @@
           <% if current_user == @ipreprotocol.user %>
             You
           <% else %>
-            <%= @ipreprotocol.user.name %>
+            <%= link_to @ipreprotocol.user.name, @ipreprotocol.user %>
           <% end %>
         </p>
         <p>

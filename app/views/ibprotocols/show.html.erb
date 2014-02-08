@@ -76,7 +76,7 @@
           <% if current_user == @ibprotocol.user %>
             You
           <% else %>
-            <%= @ibprotocol.user.name %>
+            <%= link_to @ibprotocol.user.name, @ibprotocol.user %>
           <% end %>
         </p>
         <p>

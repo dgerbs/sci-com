@@ -64,7 +64,7 @@
           <% if current_user == @ihcprotocol.user %>
             You
           <% else %>
-            <%= @ihcprotocol.user.name %>
+            <%= link_to @ihcprotocol.user.name, @ihcprotocol.user %>
           <% end %>
         </p>
         <p>

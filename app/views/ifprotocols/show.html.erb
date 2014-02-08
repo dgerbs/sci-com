@@ -52,7 +52,7 @@
           <% if current_user == @ifprotocol.user %>
             You
           <% else %>
-            <%= @ifprotocol.user.name %>
+            <%= link_to @ifprotocol.user.name, @ifprotocol.user %>
           <% end %>
         </p>
         <p>
