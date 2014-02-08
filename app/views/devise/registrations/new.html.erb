@@ -19,12 +19,12 @@
           <div class="form-inline" role="form">
             <div class="form-group">
               <%= f.label :name %>
-              <%= f.text_field :name, class: "form-control", :autofocus => true, placeholder: "First and last name, Ph.D." %>
+              <%= f.text_field :name, class: "form-control", :autofocus => true, placeholder: "First and last name" %>
             </div>
 
             <div class="form-group pull-right">
               <%= f.label :occupation %>
-              <%= f.text_field :occupation, class: "form-control", placeholder: "Ph.D. candidate, awesome person" %>
+              <%= f.text_field :occupation, class: "form-control", placeholder: "Ph.D., student, awesome person" %>
             </div>
           </div>
 
@@ -37,7 +37,7 @@
               
           <div class="form-group">
             <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "me@example.com" %>
+            <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "me@youremail.com" %>
           </div>
 
           <div class="form-group">
