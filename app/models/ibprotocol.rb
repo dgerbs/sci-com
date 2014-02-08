@@ -1,4 +1,5 @@
 class Ibprotocol < ActiveRecord::Base
+  include PublicActivity::Common
 
   validates_presence_of :cell_tissue
   validates_presence_of :lysis
@@ -23,10 +24,4 @@ class Ibprotocol < ActiveRecord::Base
   belongs_to :user
   belongs_to :antibody
 
-  def self.from_users_followed_by(user)
-    followed_user_ids = "SELECT followed_id FROM relationships
-                         WHERE follower_id = :user_id"
-    where("user_id IN (#{followed_user_ids}) OR user_id = :user_id",
-      user_id: user.id)
-  end
 end

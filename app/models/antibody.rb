@@ -1,4 +1,5 @@
 class Antibody < ActiveRecord::Base
+  include PublicActivity::Common
 
   include PgSearch
   pg_search_scope :search, against: [:product, :antibody, :target, :vendor, :isotype],

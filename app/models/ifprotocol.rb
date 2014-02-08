@@ -1,4 +1,5 @@
 class Ifprotocol < ActiveRecord::Base
+  include PublicActivity::Common
 
   validates_presence_of :cell
   validates_presence_of :fixation
@@ -16,4 +17,5 @@ class Ifprotocol < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :antibody
+  
 end

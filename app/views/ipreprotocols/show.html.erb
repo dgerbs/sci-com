@@ -99,6 +99,10 @@
           <b>posted:</b>
           <%= time_ago_in_words(@ipreprotocol.created_at) %> ago.
         </p>
+        <p>
+          <b>on:</b>
+          <%= link_to @ipreprotocol.antibody.antibody, @ipreprotocol.antibody %>
+        </p>
       </div>
     
       <br />

@@ -31,6 +31,7 @@ class IbprotocolsController < ApplicationController
 
     respond_to do |format|
       if @ibprotocol.save
+        @ibprotocol.create_activity :create, owner: current_user
         format.html { redirect_to @antibody }
         format.js
       else
@@ -56,6 +57,7 @@ class IbprotocolsController < ApplicationController
   def destroy
     @ibprotocol = current_user.ibprotocols.find(params[:id]).destroy
     @antibody = Antibody.find(params[:id])
+    @ibprotocol.create_activity :destroy, owner: current_user
 
     respond_to do |format|
       format.html { redirect_to @antibody }

@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
+
   def home
     if user_signed_in?
-      @ihcprotocol = current_user.ihcprotocols.build
-      @ibprotocol  = current_user.ibprotocols.build
-      @feed_items  = current_user.feed
+      @publications = PublicActivity::Activity.order("created_at desc").where(owner_type: "User", owner_id: current_user.followed_users.map {|u| u.id}).all
+    else
     end
   end
 

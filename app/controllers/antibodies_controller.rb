@@ -1,5 +1,5 @@
 class AntibodiesController < ApplicationController
-  before_filter :authenticate_user!, except: [:index]
+  before_filter :authenticate_user!, except: :index
 
   def index
     @antibodies = Antibody.text_search(params[:query]).paginate(page: params[:page]).per_page(12).find_with_reputation(:votes, :all, order: "votes desc")
@@ -31,6 +31,7 @@ class AntibodiesController < ApplicationController
   def create
     @antibody = Antibody.new(antibody_params)
     if @antibody.save
+      @antibody.create_activity :create, owner: current_user
       respond_to do |format|
         format.html { redirect_to root_path }
         format.js
@@ -60,6 +61,7 @@ class AntibodiesController < ApplicationController
   def destroy
     @antibody = Antibody.find(params[:id])
     if @antibody.destroy
+      @antibody.create_activity :destroy, owner: current_user
       redirect_to @antibody
     else
       render @antibody

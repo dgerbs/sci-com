@@ -31,6 +31,7 @@ class IhcprotocolsController < ApplicationController
 
     respond_to do |format|
       if @ihcprotocol.save
+        @ihcprotocol.create_activity :create, owner: current_user
         format.html { redirect_to @antibody }
         format.js
       else
@@ -56,6 +57,7 @@ class IhcprotocolsController < ApplicationController
   def destroy
     @ihcprotocol = current_user.ihcprotocols.find(params[:id]).destroy
     @antibody = Antibody.find(params[:id])
+    @ihcprotocol.create_activity :destroy, owner: current_user
 
     respond_to do |format|
       format.html { redirect_to @antibody }

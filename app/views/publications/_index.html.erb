@@ -1,0 +1,11 @@
+<h1>
+  <small>Publications</small>
+</h1>
+<p>
+<% @publications.each do |pub| %>
+  <div class="publication">
+    <%= link_to pub.owner.name, pub.owner %>
+    <%= render_activity pub %>
+  </div>
+<% end %>
+</p>
