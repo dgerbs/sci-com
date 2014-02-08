@@ -55,9 +55,10 @@ class IhcprotocolsController < ApplicationController
   end
 
   def destroy
-    @ihcprotocol = current_user.ihcprotocols.find(params[:id]).destroy
+    @ihcprotocol = current_user.ihcprotocols.find(params[:id])
     @antibody = Antibody.find(params[:id])
     @ihcprotocol.create_activity :destroy, owner: current_user
+    @ihcprotocol.destroy
 
     respond_to do |format|
       format.html { redirect_to @antibody }

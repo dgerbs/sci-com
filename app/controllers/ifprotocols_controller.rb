@@ -54,9 +54,10 @@ class IfprotocolsController < ApplicationController
   end
 
   def destroy
-    @ifprotocol = current_user.ifprotocols.find(params[:id]).destroy
+    @ifprotocol = current_user.ifprotocols.find(params[:id])
     @antibody = Antibody.find(params[:id])
     @ifprotocol.create_activity :destroy, owner: current_user
+    @ifprotocol.destroy
 
     respond_to do |format|
       format.html { redirect_to @antibody }

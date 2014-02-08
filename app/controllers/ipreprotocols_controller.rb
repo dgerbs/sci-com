@@ -54,9 +54,10 @@ class IpreprotocolsController < ApplicationController
   end
 
   def destroy
-    @ipreprotocol = current_user.ipreprotocols.find(params[:id]).destroy
+    @ipreprotocol = current_user.ipreprotocols.find(params[:id])
     @antibody = Antibody.find(params[:id])
     @ipreprotocol.create_activity :destroy, owner: current_user
+    @ipreprotocol.destroy
 
     respond_to do |format|
       format.html { redirect_to @antibody }
