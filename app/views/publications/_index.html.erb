@@ -4,7 +4,7 @@
 <p>
 <% @publications.each do |pub| %>
   <div class="publication">
-    <%= link_to pub.owner.name, pub.owner if pub.owner %>
+    <%= link_to pub.owner.name, pub.owner %>
     <%= render_activity pub %>
   </div>
 <% end %>

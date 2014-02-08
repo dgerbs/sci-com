@@ -1,2 +1,10 @@
-added a new protocol
+added a new antibody, 
 
+<% if activity.trackable %>
+ <%= link_to activity.trackable.target, activity.trackable %>
+<% else %>
+  which has since been removed
+<% end %>
+<div>
+  <small>Posted <%= time_ago_in_words(activity.created_at) %> ago.</small>
+</div>
