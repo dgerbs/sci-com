@@ -1,6 +1,6 @@
 Sci::Application.routes.draw do
 
-  devise_for :users 
+  devise_for :users
 
   resources :users, shallow: true do
     member do
