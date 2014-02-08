@@ -17,13 +17,21 @@
       <p>
         <%= render 'users/follow_form' %>
       </p>
+      
       <br>
-        <li>
-          <%= link_to root_path, class: "btn btn-link" do %>
-            <span class="glyphicon glyphicon-list"></span>
-            Publications
-          <% end %>
-        </li>
+
+      <li>
+        <%= link_to current_user, class: "btn btn-link" do %>
+        <span class="glyphicon glyphicon-list-alt"></span>
+        My Profile
+      <% end %>
+      </li>
+      <li>
+        <%= link_to root_path, class: "btn btn-link" do %>
+          <span class="glyphicon glyphicon-list"></span>
+          Publications
+        <% end %>
+      </li>
     </div>
   </div>
 
