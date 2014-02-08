@@ -4,7 +4,7 @@ added a new
   <%= link_to "Immunofluorescence", activity.trackable %> protocol on the 
   <%=link_to activity.trackable.antibody.antibody, activity.trackable.antibody %> antibody.
 <% else %>
-  which has since been removed.
+  protocol which has since been removed.
 <% end %>
 <div>
   <small>Posted <%= time_ago_in_words(activity.created_at) %> ago.</small>
