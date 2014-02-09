@@ -8,10 +8,10 @@ class AntibodiesController < ApplicationController
   def show
     @antibody = Antibody.find(params[:id])
 
-    @ihcprotocols  = @antibody.ihcprotocols
-    @ibprotocols   = @antibody.ibprotocols
-    @ifprotocols   = @antibody.ifprotocols
-    @ipreprotocols = @antibody.ipreprotocols
+    @ihcprotocols  = @antibody.ihcprotocols.paginate(page: params[:page]).per_page(10)
+    @ibprotocols   = @antibody.ibprotocols.paginate(page: params[:page]).per_page(10)
+    @ifprotocols   = @antibody.ifprotocols.paginate(page: params[:page]).per_page(10)
+    @ipreprotocols = @antibody.ipreprotocols.paginate(page: params[:page]).per_page(10)
 
     respond_to do |format|
       format.html
