@@ -1,7 +1,7 @@
 added a new antibody: 
 
 <% if activity.trackable %>
- <%= link_to activity.trackable.target, activity.trackable %>
+ <%= link_to activity.trackable.target, activity.trackable %> from <%= link_to activity.trackable.vendor, activity.trackable %>
 <% else %>
   which has since been removed
 <% end %>
