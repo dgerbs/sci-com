@@ -69,6 +69,10 @@
           <span class="badge"><%= @user.ibprotocols.count %></span>
           <%= link_to "Immunoblot protocols:", user_ibprotocols_path(@user.ibprotocols, @ibprotocol), remote: true %>
         </li>
+        <li class="list-group-item">
+          <span class="badge"><%= @user.flowprotocols.count %></span>
+          <%= link_to "Flow Cytometry protocols:", user_flowprotocols_path(@user.flowprotocols, @flowprotocol), remote: true %>
+        </li>
       </ul>
     </section>
   </div>

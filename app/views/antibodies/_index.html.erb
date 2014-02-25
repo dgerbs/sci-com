@@ -32,7 +32,7 @@
           <td><%= ab.vendor %></td>
           <td><%= ab.reputation_for(:votes).to_i %></td>
           <td><%= ab.ihcprotocols.count + ab.ibprotocols.count + ab.ifprotocols.count + 
-                  ab.ipreprotocols.count %></td>
+                  ab.ipreprotocols.count + ab.flowprotocols.count %></td>
           <td><%= link_to "Info", ab, class: "btn-link" %></td>
         </tr>
       <% end %>
