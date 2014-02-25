@@ -12,6 +12,7 @@ class AntibodiesController < ApplicationController
     @ibprotocols   = @antibody.ibprotocols.paginate(page: params[:page]).per_page(10)
     @ifprotocols   = @antibody.ifprotocols.paginate(page: params[:page]).per_page(10)
     @ipreprotocols = @antibody.ipreprotocols.paginate(page: params[:page]).per_page(10)
+    @flowprotocols = @antibody.flowprotocols.paginate(page: params[:page]).per_page(10)
 
     respond_to do |format|
       format.html

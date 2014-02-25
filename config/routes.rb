@@ -10,6 +10,7 @@ Sci::Application.routes.draw do
     resources :ibprotocols
     resources :ifprotocols
     resources :ipreprotocols
+    resources :flowprotocols
   end
   
   resources :antibodies, shallow: true do
@@ -18,12 +19,14 @@ Sci::Application.routes.draw do
     resources :ibprotocols
     resources :ifprotocols
     resources :ipreprotocols
+    resources :flowprotocols
   end
 
   resources :ihcprotocols
   resources :ibprotocols
   resources :ifprotocols
   resources :ipreprotocols
+  resources :flowprotocols
   
   resources :relationships, only: [:create, :destroy]
 

@@ -52,7 +52,7 @@
           <%= @ibprotocol.primary_description %>
         </p>
         <p>
-          <b>Washses:</b>
+          <b>Washes:</b>
           <%= @ibprotocol.first_wash %>
         </p>
         <p>
@@ -60,7 +60,7 @@
           <%= @ibprotocol.secondary_description %>
         </p>
         <p>
-          <b>Washses:</b>
+          <b>Washes:</b>
           <%= @ibprotocol.second_wash %>
         </p>
         <p>
@@ -93,7 +93,7 @@
       <div class="panel-footer">
         <% if current_user == @ibprotocol.user %>
           <%= link_to 'Edit Protocol', edit_ibprotocol_path(@ibprotocol), class: "btn btn-primary" %>
-          <%= link_to 'Destroy Protocol', @ibrotocol, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          <%= link_to 'Destroy Protocol', @ibprotocol, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
         <% end %>
       </div>     
     </div>

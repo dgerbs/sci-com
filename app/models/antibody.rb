@@ -4,7 +4,7 @@ class Antibody < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search, against: [:product, :antibody, :target, :vendor, :isotype],
     using: { tsearch: { dictionary: "english" } },
-    associated_against: { ihcprotocols: :tissue, ibprotocols: :cell_tissue, ifprotocols: :cell, ipreprotocols: :cell }
+    associated_against: { ihcprotocols: :tissue, ibprotocols: :cell_tissue, ifprotocols: :cell, ipreprotocols: :cell, flowprotocols: :cell }
 
   validates_presence_of :product
   validates_presence_of :antibody
@@ -16,6 +16,7 @@ class Antibody < ActiveRecord::Base
   has_many :ibprotocols,   dependent: :destroy
   has_many :ifprotocols,   dependent: :destroy
   has_many :ipreprotocols, dependent: :destroy
+  has_many :flowprotocols, dependent: :destroy
 
   def self.text_search(query)
     if query.present?

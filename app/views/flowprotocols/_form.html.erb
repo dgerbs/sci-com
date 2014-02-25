@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h2 class="center">Flow Cytometry Application</h2>
+      </div>
+      <div class="panel-body">
+        <%= form_for([@antibody, @flowprotocol], html: { multipart: true }) do |f| %>
+          <% if @flowprotocol.errors.any? %>
+            <div id="error_explanation">
+              <div class="alert alert-danger">
+                <p><strong><%= pluralize(@flowprotocol.errors.count, "error") %></strong> prohibited this application from being saved. 
+                </p>
+                <p>
+                  Please make sure all fields are filled.
+                </p>
+              </div>
+            </div>
+          <% end %>
+          <div class="form-group">
+            <%= f.label "Cell" %>
+            <%= f.text_field :cell, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Fixation" %>
+            <%= f.text_field :fixation, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Incubation" %>
+            <%= f.text_field :incubation, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Permeabilization" %>
+            <%= f.text_field :permeabilization, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Cell number" %>
+            <%= f.text_field :cell_number, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Washes" %>
+            <%= f.text_field :first_wash, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Immunostain volume" %>
+            <%= f.text_field :immunostain_vol, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Primary description" %>
+            <%= f.text_field :primary_description, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Washes" %>
+            <%= f.text_field :second_wash, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Secondary description" %>
+            <%= f.text_field :secondary_description, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Washes" %>
+            <%= f.text_field :third_wash, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Final volumne" %>
+            <%= f.text_field :final_vol, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Helpful information for my protocol" %>
+            <%= f.text_field :information, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Create Protocol", class: "btn btn-primary" %>
+          </div>
+        <% end %> 
+      </div>
+      <div class="panel-footer">
+      </div>
+    </div>
+  </div>
+</div>

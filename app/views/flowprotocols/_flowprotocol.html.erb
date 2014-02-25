@@ -1,0 +1,28 @@
+<h2>Flow Cytometry protocols: </h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>By</th>
+      <th>Images</th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <% @flowprotocols.each do |protocol| %>
+    <tr>
+      <td>
+        <% if current_user == protocol.user %>
+          You
+        <% else %>
+          <%= link_to protocol.user.name, protocol.user %>
+        <% end %>
+      </td>
+      <td>
+        <!-- Display protocol.images.count -->
+        0
+      </td>
+      <td><%= link_to 'Show', protocol, class: "btn-link" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

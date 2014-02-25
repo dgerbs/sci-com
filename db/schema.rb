@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140207175155) do
+ActiveRecord::Schema.define(version: 20140225134702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,28 @@ ActiveRecord::Schema.define(version: 20140207175155) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "flowprotocols", force: true do |t|
+    t.string   "cell",                  null: false
+    t.string   "fixation",              null: false
+    t.string   "incubation",            null: false
+    t.string   "permeabilization",      null: false
+    t.string   "cell_number",           null: false
+    t.string   "first_wash",            null: false
+    t.string   "immunostain_vol",       null: false
+    t.string   "primary_description",   null: false
+    t.string   "second_wash",           null: false
+    t.string   "secondary_description", null: false
+    t.string   "third_wash",            null: false
+    t.string   "final_vol",             null: false
+    t.string   "information",           null: false
+    t.integer  "user_id",               null: false
+    t.integer  "antibody_id",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "flowprotocols", ["user_id", "antibody_id", "created_at"], name: "index_flowprotocols_on_user_id_and_antibody_id_and_created_at", using: :btree
 
   create_table "ibprotocols", force: true do |t|
     t.string   "cell_tissue",           null: false

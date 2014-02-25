@@ -1,0 +1,99 @@
+<div class="row">
+  <div class="col-md-5">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3>
+          <b>Flow Cytometry Protocol:</b>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          <b>Cell type:</b>
+          <%= @flowprotocol.cell %>
+        </p>
+        <p>
+          <b>Fixation:</b>
+          <%= @flowprotocol.fixation %>
+        </p>
+        <p>
+          <b>Incubation:</b>
+          <%= @flowprotocol.incubation %>
+        </p>
+        <p>
+          <b>Permeabilization:</b>
+          <%= @flowprotocol.permeabilization %>
+        </p>
+        <p>
+          <b>Cell Number:</b>
+          <%= @flowprotocol.cell_number %>
+        </p>
+        <p>
+          <b>Washes:</b>
+          <%= @flowprotocol.first_wash %>
+        </p>
+        <p>
+          <b>Immunostain volume:</b>
+          <%= @flowprotocol.immunostain_vol %>
+        </p>
+        <p>
+          <b>Primary description:</b>
+          <%= @flowprotocol.primary_description %>
+        </p>
+        <p>
+          <b>Washes:</b>
+          <%= @flowprotocol.second_wash %>
+        </p>
+        <p>
+          <b>Secondary description:</b>
+          <%= @flowprotocol.secondary_description %>
+        </p>
+        <p>
+          <b>Washes:</b>
+          <%= @flowprotocol.third_wash %>
+        </p>
+        <p>
+          <b>Final volume:</b>
+          <%= @flowprotocol.final_vol %>
+        </p>
+        <p>
+          <b>Helpful information about my protocol:</b>
+          <%= @flowprotocol.information %>
+        </p>
+        <p>
+          <b>by:</b>
+          <% if current_user == @flowprotocol.user %>
+            You
+          <% else %>
+            <%= link_to @flowprotocol.user.name, @flowprotocol.user %>
+          <% end %>
+        </p>
+        <p>
+          <b>posted:</b>
+          <%= time_ago_in_words(@flowprotocol.created_at) %> ago.
+        </p>
+        <p>
+          <b>on:</b>
+          <%= link_to @flowprotocol.antibody.antibody, @flowprotocol.antibody %>
+        </p>
+      </div>
+    
+      <br />
+      <div class="panel-footer">
+        <% if current_user == @flowprotocol.user %>
+          <%= link_to 'Edit Protocol', edit_flowprotocol_path(@flowprotocol), class: "btn btn-primary" %>
+          <%= link_to 'Destroy Protocol', @flowprotocol, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <% end %>
+      </div>     
+    </div>
+  </div>
+  <div class="col-md-7">
+    <style>
+    div.col-md-7 {
+      border: 1px solid black;
+    }
+    </style>
+    <p>
+      Images
+    </p>
+  </div>
+</div>

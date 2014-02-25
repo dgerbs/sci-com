@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   has_many :ibprotocols,   dependent: :destroy
   has_many :ifprotocols,   dependent: :destroy
   has_many :ipreprotocols, dependent: :destroy
+  has_many :flowprotocols, dependent: :destroy
 
   has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :source
 
