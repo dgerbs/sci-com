@@ -4,8 +4,14 @@
   <div class="col-xs-12 col-sm-3 col-md-2">
 
     <!-- Profile secion -->
-    <div class="profile_pic">
-      <%= image_tag @user.image_url(:thumb) %>
+    <div>
+      <% if current_user == @user %>
+        <%= image_tag @user.image_url(:thumb) %>
+      <% elsif current_user != @user %>
+        <%= image_tag @user.image_url(:thumb) %>
+      <% else %>
+        <%= image_tag @user.image_url(:default) %>
+      <% end %>
     </div>
     <section>
       <h3>
