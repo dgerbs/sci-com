@@ -5,9 +5,14 @@
 
     <!-- Profile secion -->
     <div>
-      <% if current_user == @user %>
+      <% unless current_user != @user %>
         <%= image_tag @user.image_url(:thumb) %>
-      <% else current_user != @user %>
+        <p class="center">
+          <small>Upload an image<br /> 
+            in Profile Settings
+          </small>
+        </p>
+      <% else current_user == @user %>
         <%= image_tag @user.image_url(:thumb).to_s %>
       <% end %>
     </div>
