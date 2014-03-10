@@ -87,10 +87,12 @@
     </div>
   </div>
   <div class="col-md-7">
-    <h1>
-      <p>
-        <small>Images feature coming soon.</small>
-      </p>
-    </h1>
+    <div class="well well-sm">
+      <% unless @ihcprotocol.blot_url.present? %>
+        <%= image_tag @ihcprotocol.blot_url(:blot).to_s %>
+      <% else %>
+        <%= image_tag @ihcprotocol.blot_url(:blot).to_s %>
+      <% end %>
+    </div>
   </div>
 </div>

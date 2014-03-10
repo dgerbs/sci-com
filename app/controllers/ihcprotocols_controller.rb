@@ -71,7 +71,7 @@ class IhcprotocolsController < ApplicationController
     def ihc_params
       params.require(:ihcprotocol).permit(:tissue, :fixation, :first_wash, :methpero, :second_wash, :blocking, 
                                                    :primary_description, :third_wash, :signal, :fourth_wash, :dehydration, 
-                                                   :mounting, :information)
+                                                   :mounting, :information, :blot)
     end
 
 end

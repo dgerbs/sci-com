@@ -44,7 +44,7 @@ class IfprotocolsController < ApplicationController
     @ifprotocol = current_user.ifprotocols.find(params[:id])
 
     respond_to do |format|
-      if @ifprotocol.update_attributes(ib_params)
+      if @ifprotocol.update_attributes(if_params)
         format.html { redirect_to @ifprotocol }
         format.js
       else
@@ -69,7 +69,7 @@ class IfprotocolsController < ApplicationController
 
     def if_params
       params.require(:ifprotocol).permit(:cell, :fixation, :first_wash, :blocking, :primary_description, :second_wash, 
-                                         :secondary_description, :third_wash, :coverslip, :information)
+                                         :secondary_description, :third_wash, :coverslip, :information, :blot)
     end
 
 end

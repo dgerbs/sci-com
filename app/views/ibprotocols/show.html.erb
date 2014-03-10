@@ -99,10 +99,12 @@
     </div>
   </div>
   <div class="col-md-7">
-   <h1>
-      <p>
-        <small>Images feature coming soon.</small>
-      </p>
-    </h1>
+    <div class="well well-sm">
+      <% unless @ibprotocol.blot_url.present? %>
+        <%= image_tag @ibprotocol.blot_url(:blot).to_s %>
+      <% else %>
+        <%= image_tag @ibprotocol.blot_url(:blot).to_s %>
+      <% end %>
+    </div>
   </div>
 </div>

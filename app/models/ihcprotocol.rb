@@ -1,6 +1,8 @@
 class Ihcprotocol < ActiveRecord::Base
   include PublicActivity::Common
 
+  mount_uploader :blot, BlotUploader
+
   validates_presence_of :tissue
   validates_presence_of :fixation
   validates_presence_of :first_wash

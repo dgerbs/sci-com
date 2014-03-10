@@ -1,6 +1,8 @@
 class Ibprotocol < ActiveRecord::Base
   include PublicActivity::Common
 
+  mount_uploader :blot, BlotUploader
+
   validates_presence_of :cell_tissue
   validates_presence_of :lysis
   validates_presence_of :sonication

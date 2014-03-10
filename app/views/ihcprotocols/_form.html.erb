@@ -70,6 +70,10 @@
             <%= f.text_field :information, class: "form-control" %>
           </div>
           <div class="form-group">
+            <%= f.label :blot, "Upload blot image" %>
+            <%= f.file_field :blot %>
+          </div>
+          <div class="form-group">
             <%= f.submit "Create Protocol", class: "btn btn-primary" %>
           </div>
         <% end %> 

@@ -71,7 +71,7 @@ class IpreprotocolsController < ApplicationController
       params.require(:ipreprotocol).permit(:cell, :lysis, :sonication, :sample_concentration, :preclearing, :primary_description, 
                                            :ab_capture, :first_wash, :sample_prep, :gel, :electrophoresis, :membrane, :transfer, 
                                            :blocking, :secondary_description, :second_wash, :tertiary_description, :third_wash, 
-                                           :detection, :information)
+                                           :detection, :information, :blot)
     end
 
 end
