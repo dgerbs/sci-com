@@ -44,7 +44,7 @@ class IfprotocolsController < ApplicationController
     @ifprotocol = current_user.ifprotocols.find(params[:id])
 
     respond_to do |format|
-      if @ifprotocol.update_attributes(ib_params)
+      if @ifprotocol.update_attributes(if_params)
         format.html { redirect_to @ifprotocol }
         format.js
       else
