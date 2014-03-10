@@ -1,6 +1,8 @@
 class Ifprotocol < ActiveRecord::Base
   include PublicActivity::Common
 
+  mount_uploader :blot, BlotUploader
+
   validates_presence_of :cell
   validates_presence_of :fixation
   validates_presence_of :first_wash
