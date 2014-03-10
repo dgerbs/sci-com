@@ -71,7 +71,7 @@ class FlowprotocolsController < ApplicationController
     def flow_params
       params.require(:flowprotocol).permit(:cell, :fixation, :incubation, :permeabilization, :cell_number, :first_wash,
                                            :immunostain_vol, :primary_description, :second_wash, :secondary_description,
-                                           :third_wash, :final_vol, :information)
+                                           :third_wash, :final_vol, :information, :blot)
     end
 
 end
