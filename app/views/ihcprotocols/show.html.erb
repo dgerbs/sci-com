@@ -88,7 +88,11 @@
   </div>
   <div class="col-md-7">
     <div class="well well-sm">
-      <%= image_tag @ihcprotocol.blot_url(:blot).to_s %>
+      <% unless @ihcprotocol.blot_url.present? %>
+        <%= image_tag @ihcprotocol.blot_url(:blot).to_s %>
+      <% else %>
+        <%= image_tag @ihcprotocol.blot_url(:blot).to_s %>
+      <% end %>
     </div>
   </div>
 </div>
