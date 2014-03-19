@@ -2,7 +2,13 @@ class IbprotocolsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @ibprotocols = Ibprotocol.all
+    if params[:antibody_id].present?
+      @antibody = Antibody.find(params[:antibody_id])
+      @ibprotocols = @antibody.ibprotocols
+    elsif params[:user_id].present?
+      @user = User.find(params[:user_id])
+      @ibprotocols = Ibprotocol.where(user: @user)
+    end
   end
 
   def show

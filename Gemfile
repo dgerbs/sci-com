@@ -33,4 +33,5 @@ end
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'quiet_assets'
 end

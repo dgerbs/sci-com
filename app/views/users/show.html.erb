@@ -59,23 +59,23 @@
       <ul class="list-group">
         <li class="list-group-item">
           <span class="badge"><%= @user.ihcprotocols.count %></span>
-          <%= link_to "Immunohistochemistry protocols:", user_ihcprotocols_path(@user.ihcprotocols, @ihcprotocol), remote: true %>
+          <%= link_to "Immunohistochemistry protocols:", user_ihcprotocols_path(@user), remote: true %>
         </li>
         <li class="list-group-item">
           <span class="badge"><%= @user.ifprotocols.count %></span>
-          <%= link_to "Immunofluorescence protocols:", user_ifprotocols_path(@user.ifprotocols, @ifprotocol), remote: true %>
+          <%= link_to "Immunofluorescence protocols:", user_ifprotocols_path(@user), remote: true %>
         </li>
         <li class="list-group-item">
           <span class="badge"><%= @user.ipreprotocols.count %></span>
-          <%= link_to "Immunoprecipitation protocols:", user_ipreprotocols_path(@user.ipreprotocols, @ipreprotocol), remote: true %>
+          <%= link_to "Immunoprecipitation protocols:", user_ipreprotocols_path(@user), remote: true %>
         </li>
         <li class="list-group-item">
           <span class="badge"><%= @user.ibprotocols.count %></span>
-          <%= link_to "Immunoblot protocols:", user_ibprotocols_path(@user.ibprotocols, @ibprotocol), remote: true %>
+          <%= link_to "Immunoblot protocols:", user_ibprotocols_path(@user), remote: true %>
         </li>
         <li class="list-group-item">
           <span class="badge"><%= @user.flowprotocols.count %></span>
-          <%= link_to "Flow Cytometry protocols:", user_flowprotocols_path(@user.flowprotocols, @flowprotocol), remote: true %>
+          <%= link_to "Flow Cytometry protocols:", user_flowprotocols_path(@user), remote: true %>
         </li>
       </ul>
     </section>

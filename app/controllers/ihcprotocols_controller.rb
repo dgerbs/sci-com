@@ -2,7 +2,13 @@ class IhcprotocolsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @ihcprotocols = Ihcprotocol.all
+    if params[:antibody_id].present?
+      @antibody = Antibody.find(params[:antibody_id])
+      @ihcprotocols = @antibody.ihcprotocols
+    elsif params[:user_id].present?
+      @user = User.find(params[:user_id])
+      @ihcprotocols = Ihcprotocol.where(user: @user)
+    end
   end
 
   def show
