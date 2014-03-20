@@ -6,6 +6,7 @@ $navbar-height: 45px;
 $navbar-default-bg: white;
 $navbar-default-brand-color: #186f99;
 $brand-primary: #4ea3cc;
+$box-shadow: 0px 3px 15px;
 
 @import 'bootstrap';
 
@@ -28,7 +29,7 @@ body {
 }
 
 .panel {
-  box-shadow: 3px 3px 10px;
+  box-shadow: $box-shadow;
 }
 
 .show {
@@ -40,7 +41,7 @@ body {
 }
 
 .navbar {
-  box-shadow: 0px 0px 8px;
+  box-shadow: 0px 0px 10px;
   
   li a:hover {
     border-bottom: 5px solid #317f6e;  
@@ -86,13 +87,22 @@ body {
   }
 }
 
+.list-group {
+  li {
+    list-style: none;
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 #sidebar {
   width: 180px;
   background-color: white;
   min-height: 50px;
   margin: 0 0 15px 0; /*controls the cutoff of the top and bottom limitations*/
   padding: 15px 5px;
-  box-shadow: 3px 3px 10px; 
+  border-radius: 5px;
   float: right; /* float right for a right aligned sidebar */
   li {
     list-style: none;
