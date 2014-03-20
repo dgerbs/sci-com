@@ -109,6 +109,9 @@ body {
   padding: 15px 5px;
   box-shadow: $box-shadow; 
   border-radius: 5px;
+  top: 5.55em;
+  right: 10.69em;
+  position: fixed;
   float: right; /* float right for a right aligned sidebar */
   li {
     list-style: none;
