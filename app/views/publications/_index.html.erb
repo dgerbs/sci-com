@@ -4,7 +4,7 @@
 <p>
 <% @publications.each do |pub| %>
   <div class="publication">
-    <%= link_to pub.owner.name, pub.owner %>
+    <%= image_tag pub.owner.image_url(:small_thumb).to_s %> <%= link_to pub.owner.name, pub.owner %>
     <%= render_activity pub %>
   </div>
 <% end %>
