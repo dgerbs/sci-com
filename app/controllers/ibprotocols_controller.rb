@@ -38,7 +38,7 @@ class IbprotocolsController < ApplicationController
     respond_to do |format|
       if @ibprotocol.save
         @ibprotocol.create_activity :create, owner: current_user
-        format.html { redirect_to @antibody }
+        format.html { redirect_to @ibprotocol }
         format.js
       else
         @feed_items = []

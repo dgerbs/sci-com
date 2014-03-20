@@ -1,8 +1,9 @@
 class AntibodiesController < ApplicationController
-  before_filter :authenticate_user!, except: :index
+  before_filter :authenticate_user!
 
   def index
-    @antibodies = Antibody.text_search(params[:query]).page(params[:page]).per_page(12).find_with_reputation(:votes, :all, order: "votes desc")
+    @search = Antibody.text_search(params[:query])
+    @antibodies = @search.page(params[:page]).per_page(12).find_with_reputation(:votes, :all, order: "votes desc")
   end
 
   def show
@@ -34,7 +35,7 @@ class AntibodiesController < ApplicationController
     if @antibody.save
       @antibody.create_activity :create, owner: current_user
       respond_to do |format|
-        format.html { redirect_to root_path }
+        format.html { redirect_to @antibody }
         format.js
       end
     else
@@ -70,7 +71,7 @@ class AntibodiesController < ApplicationController
     end
   end
 
-   def vote
+  def vote
     value = params[:type] == "up" ? 1 : -1
     @antibody = Antibody.find(params[:id])
     @antibody.add_or_update_evaluation(:votes, value, current_user)

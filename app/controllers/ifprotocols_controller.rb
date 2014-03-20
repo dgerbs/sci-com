@@ -38,7 +38,7 @@ class IfprotocolsController < ApplicationController
     respond_to do |format|
       if @ifprotocol.save
         @ifprotocol.create_activity :create, owner: current_user
-        format.html { redirect_to @antibody }
+        format.html { redirect_to @ifprotocol }
         format.js
       else
         format.html { render :new }

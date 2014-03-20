@@ -38,7 +38,7 @@ class IpreprotocolsController < ApplicationController
     respond_to do |format|
       if @ipreprotocol.save
         @ipreprotocol.create_activity :create, owner: current_user
-        format.html { redirect_to @antibody }
+        format.html { redirect_to @ipreprotocol }
         format.js
       else
         format.html { render :new }

@@ -38,7 +38,7 @@ class IhcprotocolsController < ApplicationController
     respond_to do |format|
       if @ihcprotocol.save
         @ihcprotocol.create_activity :create, owner: current_user
-        format.html { redirect_to @antibody }
+        format.html { redirect_to @ihcprotocol }
         format.js
       else
         @feed_items = []

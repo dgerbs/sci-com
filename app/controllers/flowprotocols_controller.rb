@@ -38,7 +38,7 @@ class FlowprotocolsController < ApplicationController
     respond_to do |format|
       if @flowprotocol.save
         @flowprotocol.create_activity :create, owner: current_user
-        format.html { redirect_to @antibody }
+        format.html { redirect_to @flowprotocol }
         format.js
       else
         @feed_items = []

@@ -4,24 +4,31 @@
     <tr>
       <th>By</th>
       <th>Cell/Tissue</th>
+      <th>Antibody</th>
+      <th>Image</th>
     </tr>
   </thead>
 
   <tbody>
-   <% @ibprotocols.each do |protocol| %>
-    <tr>
-      <td>
-        <% if current_user == protocol.user %>
-          You
-        <% else %>
-          <%= link_to protocol.user.name, protocol.user %>
-        <% end %>
-      </td>
-      <td>
-        <%= protocol.cell_tissue %>
-      </td>
-      <td><%= link_to 'Show', protocol, class: "btn-link" %></td>
-    </tr>
-  <% end %>
+    <% @ibprotocols.each do |protocol| %>
+      <tr>
+        <td>
+          <% if current_user == protocol.user %>
+            You
+          <% else %>
+            <%= link_to protocol.user.name, protocol.user %>
+          <% end %>
+        </td>
+        <td>
+          <%= protocol.cell_tissue %>
+        </td>
+        <td>
+          <%= link_to protocol.antibody.antibody, protocol.antibody %>
+        </td>
+        <td>
+          <%= link_to 'Show', protocol, class: "btn-link" %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
