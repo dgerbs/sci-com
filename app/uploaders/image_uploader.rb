@@ -40,7 +40,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb do
-    process resize_to_fill: [180, 250]
+    process resize_to_fill: [165, 250]
     process convert: 'png'
   end
 

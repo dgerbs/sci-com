@@ -87,7 +87,12 @@ body {
   }
 }
 
+.well {
+  box-shadow: $box-shadow;
+}
+
 .list-group {
+  border-radius: 5px;
   li {
     list-style: none;
     a:hover {
@@ -102,6 +107,7 @@ body {
   min-height: 50px;
   margin: 0 0 15px 0; /*controls the cutoff of the top and bottom limitations*/
   padding: 15px 5px;
+  box-shadow: $box-shadow; 
   border-radius: 5px;
   float: right; /* float right for a right aligned sidebar */
   li {
