@@ -19,55 +19,55 @@
           <% end %>
           <div class="form-group">
             <%= f.label "Cell" %>
-            <%= f.text_field :cell, class: "form-control" %>
+            <%= f.text_field :cell, class: "form-control", placeholder: "tissue type" %>
           </div>
           <div class="form-group">
             <%= f.label "Fixation" %>
-            <%= f.text_field :fixation, class: "form-control" %>
+            <%= f.text_field :fixation, class: "form-control", placeholder: "(if applicable), reagent, duration, temperature" %>
           </div>
           <div class="form-group">
-            <%= f.label "Incubation" %>
-            <%= f.text_field :incubation, class: "form-control" %>
+            <%= f.label "Post-Fixation Incubation" %>
+            <%= f.text_field :incubation, class: "form-control", placeholder: "(if applicable), duration, temperature" %>
           </div>
           <div class="form-group">
             <%= f.label "Permeabilization" %>
-            <%= f.text_field :permeabilization, class: "form-control" %>
+            <%= f.text_field :permeabilization, class: "form-control", placeholder: "(if applicable), reagent, duration, temperature" %>
           </div>
           <div class="form-group">
             <%= f.label "Cell number" %>
-            <%= f.text_field :cell_number, class: "form-control" %>
+            <%= f.text_field :cell_number, class: "form-control", placeholder: "(x10^6)" %>
           </div>
           <div class="form-group">
             <%= f.label "Washes" %>
-            <%= f.text_field :first_wash, class: "form-control" %>
+            <%= f.text_field :first_wash, class: "form-control", placeholder: "number, buffer, duration" %>
           </div>
           <div class="form-group">
             <%= f.label "Immunostain volume" %>
-            <%= f.text_field :immunostain_vol, class: "form-control" %>
+            <%= f.text_field :immunostain_vol, class: "form-control", placeholder: "mL,buffer" %>
           </div>
           <div class="form-group">
             <%= f.label "Primary description" %>
-            <%= f.text_field :primary_description, class: "form-control" %>
+            <%= f.text_field :primary_description, class: "form-control", placeholder: "dilution, duration, temperature" %>
           </div>
           <div class="form-group">
             <%= f.label "Washes" %>
-            <%= f.text_field :second_wash, class: "form-control" %>
+            <%= f.text_field :second_wash, class: "form-control", placeholder: "number, buffer, duration" %>
           </div>
           <div class="form-group">
             <%= f.label "Secondary description" %>
-            <%= f.text_field :secondary_description, class: "form-control" %>
+            <%= f.text_field :secondary_description, class: "form-control", placeholder: "(if applicable) dilution, duration, temperature" %>
           </div>
           <div class="form-group">
             <%= f.label "Washes" %>
-            <%= f.text_field :third_wash, class: "form-control" %>
+            <%= f.text_field :third_wash, class: "form-control", placeholder: "number, duration, temperature" %>
           </div>
           <div class="form-group">
             <%= f.label "Final volumne" %>
-            <%= f.text_field :final_vol, class: "form-control" %>
+            <%= f.text_field :final_vol, class: "form-control", placeholder: "mL, buffer" %>
           </div>
           <div class="form-group">
             <%= f.label "Helpful information for my protocol" %>
-            <%= f.text_field :information, class: "form-control" %>
+            <%= f.text_field :information, class: "form-control", placeholder: "please provide any additional information here" %>
           </div>
           <div class="form-group">
             <%= f.label :blot, "Upload blot image" %>
