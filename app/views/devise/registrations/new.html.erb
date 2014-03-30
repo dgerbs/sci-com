@@ -17,6 +17,7 @@
           <% end %>
 
           <div class="form-inline" role="form">
+
             <div class="form-group">
               <%= f.label :name %>
               <%= f.text_field :name, class: "form-control", :autofocus => true, placeholder: "First and last name" %>
@@ -24,7 +25,7 @@
 
             <div class="form-group pull-right">
               <%= f.label :occupation %>
-              <%= f.text_field :occupation, class: "form-control", placeholder: "Ph.D., student, awesome person" %>
+              <%= f.text_field :occupation, class: "form-control", placeholder: "scientist, student" %>
             </div>
           </div>
 
@@ -50,6 +51,13 @@
             <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, class: "form-control" %>
           </div>
+
+          <div class="form-group">
+            <%= f.label :image, "Upload profile picture" %>
+            <%= f.file_field :image %>
+          </div>
+
+          <br>
 
           <div class="form-group">
             <%= f.submit "Sign up", class: "btn btn-lg btn-primary disabled" %>
