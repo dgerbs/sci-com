@@ -22,21 +22,8 @@
         <%= render 'users/follow_form' %>
       </p>
     </div>
-    <div class="panel">
-      <ul class="list-group">
-        <li class="list-group-item">
-          <%= link_to current_user, class: "btn btn-link" do %>
-            <span class="glyphicon glyphicon-list-alt"></span>
-            My Profile
-          <% end %>
-        </li>
-        <li class="list-group-item">
-          <%= link_to root_path, class: "btn btn-link" do %>
-            <span class="glyphicon glyphicon-list"></span>
-            Publications
-          <% end %>
-        </li>
-      </ul>
+    <div class="left_sidebar">
+      <%= render 'users/sidebar' %>
     </div>
   </div>
 

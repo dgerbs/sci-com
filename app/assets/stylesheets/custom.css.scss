@@ -101,6 +101,23 @@ body {
   }
 }
 
+.left_sidebar {
+  width: 180px;
+  background-color: white;
+  min-height: 50px;
+  margin: 0 0 15px 0; /*controls the cutoff of the top and bottom limitations*/
+  padding: 15px 5px;
+  box-shadow: $box-shadow; 
+  border-radius: 5px;
+  float: left; /* float right for a right aligned sidebar */
+  li {
+    list-style: none;
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 #sidebar {
   width: 180px;
   background-color: white;

@@ -15,32 +15,7 @@
   <!-- Sidebar navigation -->
   <div class="col-xs-12 col-md-2 col-md-4">
     <div id="sidebar">
-      <li>
-        <%= link_to current_user, class: "btn btn-link" do %>
-          <span class="glyphicon glyphicon-list-alt"></span>
-          My Profile
-        <% end %>
-      </li>
-      <li>
-        <%= link_to root_path, class: "btn btn-link" do %>
-          <span class="glyphicon glyphicon-list"></span>
-          Publications
-        <% end %>
-      </li>
-      <hr>
-      <li>
-        <%= link_to antibodies_path, remote: true, class: "btn btn-link" do %>
-          <span class="glyphicon glyphicon-search"></span>
-          Antibodies
-        <% end %>
-      </li>
-      <li>
-        <%= link_to new_antibody_path, remote: true, class: "btn btn-link" do %>
-          <span class="glyphicon glyphicon-plus"></span>
-          Antibody
-        <% end %>
-      </li>
+      <%= render 'users/sidebar' %>
     </div>
   </div>
-
 </div>
