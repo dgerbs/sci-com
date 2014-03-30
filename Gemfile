@@ -20,10 +20,7 @@ gem 'public_activity'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
-gem 'newrelic_rpm'
-gem 'airbrake'
 gem 'unicorn'
-
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -32,6 +29,8 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'airbrake'
+  gem 'newrelic_rpm'
 end
 
 group :development, :test do
