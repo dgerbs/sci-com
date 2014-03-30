@@ -5,7 +5,7 @@
         <%= form_tag antibodies_path, method: :get do %>
         <p>
           <%= text_field_tag :query, params[:query], placeholder: "Antibody search..." %>
-          <%= submit_tag "Search", name: nil %>
+          <%= submit_tag "Search", name: nil %> <%= link_to "+ New Antibody", new_antibody_path, class: "btn btn-link" %>
         </p>
         <% end %>
       </div>
