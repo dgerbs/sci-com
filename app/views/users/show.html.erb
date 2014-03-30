@@ -66,6 +66,10 @@
           <span class="badge"><%= @user.flowprotocols.count %></span>
           <%= link_to "Flow Cytometry protocols:", user_flowprotocols_path(@user), remote: true %>
         </li>
+        <li class="list-group-item">
+          <span class="badge"><%= @user.ihcprotocols.count + @user.ifprotocols.count + @user.ipreprotocols.count + @user.ibprotocols.count + @user.flowprotocols.count %></span>
+          <span><strong>Total protocols:</strong></span>
+        </li>
       </ul>
     </section>
   </div>
