@@ -3,7 +3,7 @@ class AntibodiesController < ApplicationController
 
   def index
     @search = Antibody.text_search(params[:query])
-    @antibodies = @search.page(params[:page]).per_page(12).find_with_reputation(:votes, :all, order: "votes desc")
+    @antibodies = @search.page(params[:page]).per_page(12).reorder('votes desc').find_with_reputation(:votes, :all)
   end
 
   def show
