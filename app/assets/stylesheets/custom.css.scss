@@ -138,6 +138,10 @@ body {
   }
 }
 
+a.btn.btn-default:hover {
+  background-color: $brand-primary;
+}
+
 .users {
   list-style: none;
 }

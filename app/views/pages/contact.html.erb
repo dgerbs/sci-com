@@ -2,10 +2,25 @@
 
 <div class="row">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <h1>
-      <p>
-        <small>Contact feature coming soon.</small>
-      </p>
-    </h1>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h1 class="center">Contact</h1>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="center">
+          <p>We want to hear from you!</p>
+          <p>
+            <strong>Please <%= mail_to "scierobind@gmail.com", subject: "Feedback", body: "Hey guys,", class: "btn btn-default" do %> 
+            <strong>drop us a line</strong>
+            <% end %>  
+            with your feedback and suggestions.</strong>
+          </p>
+        </div>
+      </div>
+      <div class="panel-footer">
+      </div>
+    </div>
   </div>
 </div>
