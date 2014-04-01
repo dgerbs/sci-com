@@ -44,7 +44,7 @@ class AntibodiesController < ApplicationController
   end
 
   def edit
-    if user_signed_in? && current_user.admin?
+    if current_user.admin?
       @antibody = Antibody.find(params[:id])
     else
       render :edit
@@ -61,7 +61,6 @@ class AntibodiesController < ApplicationController
   end
 
   def destroy
-    if user_signed_in? && current_user.admin?
     @antibody = Antibody.find(params[:id])
     @antibody.create_activity :destroy, owner: current_user
     @antibody.destroy
