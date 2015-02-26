@@ -14,3 +14,10 @@ test:
   username:
   password: 
 
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: sci_production
+  pool: 5
+  username: 
+  password: 
