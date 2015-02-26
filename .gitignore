@@ -22,4 +22,4 @@ doc/
 .idea
 /.env
 /public/uploads
-/config/database.yml
+
